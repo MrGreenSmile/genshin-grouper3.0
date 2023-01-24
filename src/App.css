@@ -1,0 +1,111 @@
+body::-webkit-scrollbar {
+  background: none;
+  width: 10px;
+  margin-bottom: 120px;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: skyblue;
+  border-radius: 10px;
+  border: 1px solid white;
+}
+
+.information-btn {
+  cursor: pointer;
+  font-size: 15px;
+  color: skyblue;
+  margin-left: 10px;
+}
+.information-modall {
+  position: fixed;
+  width: 60%;
+  left: 20%;
+  background-color: white;
+}
+.information-modall-bg {
+  position: fixed;
+  background-color: rgba(175, 175, 175, 0.7);
+  top: 0px;
+  width: 100vw;
+  height: 100vh;
+}
+
+.main-container {
+  padding: 5px;
+}
+input[type="checkbox"] {
+  display: none;
+}
+input[type="checkbox"] + label {
+  display: inline-block;
+}
+input[type="checkbox"]:checked + label {
+  box-shadow: 0px 0px 5px blue;
+  border-radius: 5px;
+}
+.character-card:checked + label {
+  border: 1px solid skyblue;
+}
+.character-card img {
+  width: 80px;
+  height: 100px;
+}
+.control-btn {
+  border: none;
+  float: right;
+  width: 75px;
+  height: 30px;
+  background-color: skyblue;
+
+  color: white;
+  font-weight: bold;
+}
+.selected-character img {
+  width: 80px;
+  height: 100px;
+}
+.selected-number {
+  font-size: 15px;
+  float: right;
+}
+@media screen and (max-width: 660px) {
+  .selected-character {
+    transition: 0.5s;
+    transition-property: height, position;
+    position: fixed;
+    bottom: 0px;
+
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    padding: 5px;
+    height: 50px;
+    width: 90vw;
+    overflow-y: hidden;
+  }
+  .selected-character-checked {
+    transition: 0.5s;
+    transition-property: height, position;
+    position: none;
+    height: 90vh;
+    overflow-y: auto;
+  }
+  .selected-character::-webkit-scrollbar {
+    width: 5px;
+  }
+  .selected-character::-webkit-scrollbar-thumb {
+    background-color: skyblue;
+  }
+  .selected-character h2 {
+    cursor: pointer;
+    width: 95%;
+  }
+}
+@media screen and (min-width: 660px) {
+  .selected-number {
+    margin-right: 10px;
+    font-size: 20px;
+  }
+}
+
+.temp {
+  font-weight: bold;
+}

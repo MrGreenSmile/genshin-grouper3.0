@@ -1,0 +1,397 @@
+/*		5성		*/
+#야란 + label {
+  background: url("character_card/야란.webp") no-repeat 0 0px / contain;
+}
+#야란:checked + label {
+  background: url("character_card/야란.webp") no-repeat 0 1px / contain;
+}
+#알베도 + label {
+  background: url("character_card/알베도.webp") no-repeat 0 0px / contain;
+}
+#알베도:checked + label {
+  background: url("character_card/알베도.webp") no-repeat 0 1px / contain;
+}
+#아라타키_이토 + label {
+  background: url("character_card/아라타키 이토.webp") no-repeat 0 0px / contain;
+}
+#아라타키_이토:checked + label {
+  background: url("character_card/아라타키 이토.webp") no-repeat 0 1px / contain;
+}
+#에일로이 + label {
+  background: url("character_card/에일로이.webp") no-repeat 0 0px / contain;
+}
+#에일로이:checked + label {
+  background: url("character_card/에일로이.webp") no-repeat 0 1px / contain;
+}
+#다이루크 + label {
+  background: url("character_card/다이루크.webp") no-repeat 0 0px / contain;
+}
+#다이루크:checked + label {
+  background: url("character_card/다이루크.webp") no-repeat 0 1px / contain;
+}
+#유라 + label {
+  background: url("character_card/유라.webp") no-repeat 0 0px / contain;
+}
+#유라:checked + label {
+  background: url("character_card/유라.webp") no-repeat 0 1px / contain;
+}
+#감우 + label {
+  background: url("character_card/감우.webp") no-repeat 0 0px / contain;
+}
+#감우:checked + label {
+  background: url("character_card/감우.webp") no-repeat 0 1px / contain;
+}
+#호두 + label {
+  background: url("character_card/호두.webp") no-repeat 0 0px / contain;
+}
+#호두:checked + label {
+  background: url("character_card/호두.webp") no-repeat 0 1px / contain;
+}
+#진 + label {
+  background: url("character_card/진.webp") no-repeat 0 0px / contain;
+}
+#진:checked + label {
+  background: url("character_card/진.webp") no-repeat 0 1px / contain;
+}
+#카에데하라_카즈하 + label {
+  background: url("character_card/카에데하라 카즈하.webp") no-repeat 0 0px /
+    contain;
+}
+#카에데하라_카즈하:checked + label {
+  background: url("character_card/카에데하라 카즈하.webp") no-repeat 0 1px /
+    contain;
+}
+#카미사토_아야카 + label {
+  background: url("character_card/카미사토 아야카.webp") no-repeat 0 0px /
+    contain;
+}
+#카미사토_아야카:checked + label {
+  background: url("character_card/카미사토 아야카.webp") no-repeat 0 1px /
+    contain;
+}
+#카미사토_아야토 + label {
+  background: url("character_card/카미사토 아야토.webp") no-repeat 0 0px /
+    contain;
+}
+#카미사토_아야토:checked + label {
+  background: url("character_card/카미사토 아야토.webp") no-repeat 0 1px /
+    contain;
+}
+#각청 + label {
+  background: url("character_card/각청.webp") no-repeat 0 0px / contain;
+}
+#각청:checked + label {
+  background: url("character_card/각청.webp") no-repeat 0 1px / contain;
+}
+#클레 + label {
+  background: url("character_card/클레.webp") no-repeat 0 0px / contain;
+}
+#클레:checked + label {
+  background: url("character_card/클레.webp") no-repeat 0 1px / contain;
+}
+#모나 + label {
+  background: url("character_card/모나.webp") no-repeat 0 0px / contain;
+}
+#모나:checked + label {
+  background: url("character_card/모나.webp") no-repeat 0 1px / contain;
+}
+#치치 + label {
+  background: url("character_card/치치.webp") no-repeat 0 0px / contain;
+}
+#치치:checked + label {
+  background: url("character_card/치치.webp") no-repeat 0 1px / contain;
+}
+#라이덴_쇼군 + label {
+  background: url("character_card/라이덴 쇼군.webp") no-repeat 0 0px / contain;
+}
+#라이덴_쇼군:checked + label {
+  background: url("character_card/라이덴 쇼군.webp") no-repeat 0 1px / contain;
+}
+#산고노미야_코코미 + label {
+  background: url("character_card/산고노미야 코코미.webp") no-repeat 0 0px /
+    contain;
+}
+#산고노미야_코코미:checked + label {
+  background: url("character_card/산고노미야 코코미.webp") no-repeat 0 1px /
+    contain;
+}
+#신학 + label {
+  background: url("character_card/신학.webp") no-repeat 0 0px / contain;
+}
+#신학:checked + label {
+  background: url("character_card/신학.webp") no-repeat 0 1px / contain;
+}
+#타르탈리아 + label {
+  background: url("character_card/타르탈리아.webp") no-repeat 0 0px / contain;
+}
+#타르탈리아:checked + label {
+  background: url("character_card/타르탈리아.webp") no-repeat 0 1px / contain;
+}
+#벤티 + label {
+  background: url("character_card/벤티.webp") no-repeat 0 0px / contain;
+}
+#벤티:checked + label {
+  background: url("character_card/벤티.webp") no-repeat 0 1px / contain;
+}
+#소 + label {
+  background: url("character_card/소.webp") no-repeat 0 0px / contain;
+}
+#소:checked + label {
+  background: url("character_card/소.webp") no-repeat 0 1px / contain;
+}
+#야에_미코 + label {
+  background: url("character_card/야에 미코.webp") no-repeat 0 0px / contain;
+}
+#야에_미코:checked + label {
+  background: url("character_card/야에 미코.webp") no-repeat 0 1px / contain;
+}
+#요이미야 + label {
+  background: url("character_card/요이미야.webp") no-repeat 0 0px / contain;
+}
+#요이미야:checked + label {
+  background: url("character_card/요이미야.webp") no-repeat 0 1px / contain;
+}
+#종려 + label {
+  background: url("character_card/종려.webp") no-repeat 0 0px / contain;
+}
+#종려:checked + label {
+  background: url("character_card/종려.webp") no-repeat 0 1px / contain;
+}
+#여행자_바람 + label {
+  background: url("character_card/여행자 바람.webp") no-repeat 0 0px / contain;
+}
+#여행자_바람:checked + label {
+  background: url("character_card/여행자 바람.webp") no-repeat 0 1px / contain;
+}
+#여행자_바위 + label {
+  background: url("character_card/여행자 바위.webp") no-repeat 0 0px / contain;
+}
+#여행자_바위:checked + label {
+  background: url("character_card/여행자 바위.webp") no-repeat 0 1px / contain;
+}
+#여행자_번개 + label {
+  background: url("character_card/여행자 번개.webp") no-repeat 0 0px / contain;
+}
+#여행자_번개:checked + label {
+  background: url("character_card/여행자 번개.webp") no-repeat 0 1px / contain;
+}
+#여행자_풀 + label {
+  background: url("character_card/여행자 풀.webp") no-repeat 0 0px / contain;
+}
+#여행자_풀:checked + label {
+  background: url("character_card/여행자 풀.webp") no-repeat 0 1px / contain;
+}
+#타이나리 + label {
+  background: url("character_card/타이나리.webp") no-repeat 0 0px / contain;
+}
+#타이나리:checked + label {
+  background: url("character_card/타이나리.webp") no-repeat 0 1px / contain;
+}
+#사이노 + label {
+  background: url("character_card/사이노.webp") no-repeat 0 0px / contain;
+}
+#사이노:checked + label {
+  background: url("character_card/사이노.webp") no-repeat 0 1px / contain;
+}
+#닐루 + label {
+  background: url("character_card/닐루.webp") no-repeat 0 0px / contain;
+}
+#닐루:checked + label {
+  background: url("character_card/닐루.webp") no-repeat 0 1px / contain;
+}
+#나히다 + label {
+  background: url("character_card/나히다.webp") no-repeat 0 0px / contain;
+}
+#나히다:checked + label {
+  background: url("character_card/나히다.webp") no-repeat 0 1px / contain;
+}
+#방랑자 + label {
+  background: url("character_card/방랑자.webp") no-repeat 0 0px / contain;
+}
+#방랑자:checked + label {
+  background: url("character_card/방랑자.webp") no-repeat 0 1px / contain;
+}
+
+/*		4성		*/
+#앰버 + label {
+  background: url("character_card/앰버.webp") no-repeat 0 0px / contain;
+}
+#앰버:checked + label {
+  background: url("character_card/앰버.webp") no-repeat 0 1px / contain;
+}
+#바바라 + label {
+  background: url("character_card/바바라.webp") no-repeat 0 0px / contain;
+}
+#바바라:checked + label {
+  background: url("character_card/바바라.webp") no-repeat 0 1px / contain;
+}
+#북두 + label {
+  background: url("character_card/북두.webp") no-repeat 0 0px / contain;
+}
+#북두:checked + label {
+  background: url("character_card/북두.webp") no-repeat 0 1px / contain;
+}
+#베넷 + label {
+  background: url("character_card/베넷.webp") no-repeat 0 0px / contain;
+}
+#베넷:checked + label {
+  background: url("character_card/베넷.webp") no-repeat 0 1px / contain;
+}
+#중운 + label {
+  background: url("character_card/중운.webp") no-repeat 0 0px / contain;
+}
+#중운:checked + label {
+  background: url("character_card/중운.webp") no-repeat 0 1px / contain;
+}
+#디오나 + label {
+  background: url("character_card/디오나.webp") no-repeat 0 0px / contain;
+}
+#디오나:checked + label {
+  background: url("character_card/디오나.webp") no-repeat 0 1px / contain;
+}
+#피슬 + label {
+  background: url("character_card/피슬.webp") no-repeat 0 0px / contain;
+}
+#피슬:checked + label {
+  background: url("character_card/피슬.webp") no-repeat 0 1px / contain;
+}
+#고로 + label {
+  background: url("character_card/고로.webp") no-repeat 0 0px / contain;
+}
+#고로:checked + label {
+  background: url("character_card/고로.webp") no-repeat 0 1px / contain;
+}
+#케이야 + label {
+  background: url("character_card/케이야.webp") no-repeat 0 0px / contain;
+}
+#케이야:checked + label {
+  background: url("character_card/케이야.webp") no-repeat 0 1px / contain;
+}
+#쿠죠_사라 + label {
+  background: url("character_card/쿠죠 사라.webp") no-repeat 0 0px / contain;
+}
+#쿠죠_사라:checked + label {
+  background: url("character_card/쿠죠 사라.webp") no-repeat 0 1px / contain;
+}
+#리사 + label {
+  background: url("character_card/리사.webp") no-repeat 0 0px / contain;
+}
+#리사:checked + label {
+  background: url("character_card/리사.webp") no-repeat 0 1px / contain;
+}
+#응광 + label {
+  background: url("character_card/응광.webp") no-repeat 0 0px / contain;
+}
+#응광:checked + label {
+  background: url("character_card/응광.webp") no-repeat 0 1px / contain;
+}
+#노엘 + label {
+  background: url("character_card/노엘.webp") no-repeat 0 0px / contain;
+}
+#노엘:checked + label {
+  background: url("character_card/노엘.webp") no-repeat 0 1px / contain;
+}
+#레이저 + label {
+  background: url("character_card/레이저.webp") no-repeat 0 0px / contain;
+}
+#레이저:checked + label {
+  background: url("character_card/레이저.webp") no-repeat 0 1px / contain;
+}
+#로자리아 + label {
+  background: url("character_card/로자리아.webp") no-repeat 0 0px / contain;
+}
+#로자리아:checked + label {
+  background: url("character_card/로자리아.webp") no-repeat 0 1px / contain;
+}
+#사유 + label {
+  background: url("character_card/사유.webp") no-repeat 0 0px / contain;
+}
+#사유:checked + label {
+  background: url("character_card/사유.webp") no-repeat 0 1px / contain;
+}
+#설탕 + label {
+  background: url("character_card/설탕.webp") no-repeat 0 0px / contain;
+}
+#설탕:checked + label {
+  background: url("character_card/설탕.webp") no-repeat 0 1px / contain;
+}
+#토마 + label {
+  background: url("character_card/토마.webp") no-repeat 0 0px / contain;
+}
+#토마:checked + label {
+  background: url("character_card/토마.webp") no-repeat 0 1px / contain;
+}
+#향릉 + label {
+  background: url("character_card/향릉.webp") no-repeat 0 0px / contain;
+}
+#향릉:checked + label {
+  background: url("character_card/향릉.webp") no-repeat 0 1px / contain;
+}
+#행추 + label {
+  background: url("character_card/행추.webp") no-repeat 0 0px / contain;
+}
+#행추:checked + label {
+  background: url("character_card/행추.webp") no-repeat 0 1px / contain;
+}
+#신염 + label {
+  background: url("character_card/신염.webp") no-repeat 0 0px / contain;
+}
+#신염:checked + label {
+  background: url("character_card/신염.webp") no-repeat 0 1px / contain;
+}
+#연비 + label {
+  background: url("character_card/연비.webp") no-repeat 0 0px / contain;
+}
+#연비:checked + label {
+  background: url("character_card/연비.webp") no-repeat 0 1px / contain;
+}
+#운근 + label {
+  background: url("character_card/운근.webp") no-repeat 0 0px / contain;
+}
+#운근:checked + label {
+  background: url("character_card/운근.webp") no-repeat 0 1px / contain;
+}
+#쿠키_시노부 + label {
+  background: url("character_card/쿠키 시노부.webp") no-repeat 0 0px / contain;
+}
+#쿠키_시노부:checked + label {
+  background: url("character_card/쿠키 시노부.webp") no-repeat 0 1px / contain;
+}
+#시카노인_헤이조 + label {
+  background: url("character_card/시카노인 헤이조.webp") no-repeat 0 0px /
+    contain;
+}
+#시카노인_헤이조:checked + label {
+  background: url("character_card/시카노인 헤이조.webp") no-repeat 0 1px /
+    contain;
+}
+#콜레이 + label {
+  background: url("character_card/콜레이.webp") no-repeat 0 0px / contain;
+}
+#콜레이:checked + label {
+  background: url("character_card/콜레이.webp") no-repeat 0 1px / contain;
+}
+#도리 + label {
+  background: url("character_card/도리.webp") no-repeat 0 0px / contain;
+}
+#도리:checked + label {
+  background: url("character_card/도리.webp") no-repeat 0 1px / contain;
+}
+#캔디스 + label {
+  background: url("character_card/캔디스.webp") no-repeat 0 0px / contain;
+}
+#캔디스:checked + label {
+  background: url("character_card/캔디스.webp") no-repeat 0 1px / contain;
+}
+#레일라 + label {
+  background: url("character_card/레일라.webp") no-repeat 0 0px / contain;
+}
+#레일라:checked + label {
+  background: url("character_card/레일라.webp") no-repeat 0 1px / contain;
+}
+#파루잔 + label {
+  background: url("character_card/파루잔.webp") no-repeat 0 0px / contain;
+}
+#파루잔:checked + label {
+  background: url("character_card/파루잔.webp") no-repeat 0 1px / contain;
+}
