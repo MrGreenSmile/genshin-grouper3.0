@@ -95,21 +95,63 @@ export interface dataSetter {
   setData: React.Dispatch<React.SetStateAction<Array<Array<string>>>>;
 }
 function ControlButton({ data, setData }: dataSetter) {
-  const [rare_control, set_rare_control] = useState(false);
+  const [temp_data, set_temp_data] = useState(data);
+  const [rare_btn, set_rare_btn] = useState(false);
+  const [weapon_btn, set_weapon_btn] = useState(false);
+  const [element_btn, set_element_btn] = useState(false);
+
+  function sorter_defualt() {
+    setData(temp_data);
+  }
   function sorter_rare() {
     let unsorted = [...data];
-    let sorted = rare_control
-      ? unsorted.sort((a: any, b: any) => b[4] - a[4])
-      : unsorted.sort((a: any, b: any) => a[4] - b[4]);
+    let sorted = rare_btn
+      ? unsorted.sort((a: string, b: string) => b[4] - a[4])
+      : unsorted.sort((a: string, b: string) => a[4] - b[4]);
 
     setData(sorted);
-    set_rare_control(!rare_control);
+    set_rare_btn(!rare_btn);
+  }
+  function sorter_weapon() {
+    let unsorted = [...data];
+    let sorted = weapon_btn
+      ? unsorted.sort((a: string, b: string) =>
+          a[3] == b[3] ? b[4] - a[4] : a[3].localeCompare(b[3])
+        )
+      : unsorted.sort((a: string, b: string) =>
+          a[3] == b[3] ? b[4] - a[4] : b[3].localeCompare(a[3])
+        );
+
+    setData(sorted);
+    set_weapon_btn(!weapon_btn);
+  }
+  function sorter_element() {
+    let unsorted = [...data];
+    let sorted = element_btn
+      ? unsorted.sort((a: string, b: string) =>
+          a[2] == b[2] ? b[4] - a[4] : a[2].localeCompare(b[2])
+        )
+      : unsorted.sort((a: string, b: string) =>
+          a[2] == b[2] ? b[4] - a[4] : b[2].localeCompare(a[2])
+        );
+
+    setData(sorted);
+    set_element_btn(!element_btn);
   }
 
   return (
     <div className="sorter-btn-container">
+      <button onClick={() => sorter_defualt()} className="control-btn">
+        디폴트
+      </button>
       <button onClick={() => sorter_rare()} className="control-btn">
-        레어도
+        레어도 {rare_btn ? <span>↑</span> : <span>↓</span>}
+      </button>
+      <button onClick={() => sorter_weapon()} className="control-btn">
+        무기별 {weapon_btn ? <span>↑</span> : <span>↓</span>}
+      </button>
+      <button onClick={() => sorter_element()} className="control-btn">
+        원소별 {element_btn ? <span>↑</span> : <span>↓</span>}
       </button>
     </div>
   );
