@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
 import "./App.css";
 import "./characters.css";
 import { CharacterCard, CharacterCheckedContainer } from "./components/grouper";
-import { five_star, four_star } from "./datas";
+import { characters } from "./datas";
 
 function App() {
   return (
@@ -19,7 +19,9 @@ function App() {
 }
 
 function CharacterList() {
+  const [data, setData] = useState(characters);
   const [forinfo, isinfo] = useState(false);
+  const [sort_btn, set_sort_btn] = useState(false);
   const [checked_list, set_checked_list] = useState<Array<string>>([]);
 
   const checker = useCallback(
@@ -49,20 +51,19 @@ function CharacterList() {
       <div className="main-container">
         <h3>
           캐릭터 선택
+          <button
+            onClick={() => set_sort_btn(!sort_btn)}
+            className="control-btn"
+          >
+            정렬
+          </button>
+          {sort_btn ? <ControlButton data={data} setData={setData} /> : null}
           <button onClick={() => checked_clear()} className="control-btn">
             초기화
           </button>
         </h3>
         <div>
-          {five_star.map((character) => (
-            <CharacterCard
-              key=""
-              character_info={character}
-              checked_list={checked_list}
-              checker={checker}
-            />
-          ))}
-          {four_star.map((character) => (
+          {data.map((character) => (
             <CharacterCard
               key=""
               character_info={character}
@@ -89,6 +90,30 @@ function Information({ isinfo, forinfo }: ModalState) {
   );
 }
 
+export interface dataSetter {
+  data: Array<Array<string>>;
+  setData: React.Dispatch<React.SetStateAction<Array<Array<string>>>>;
+}
+function ControlButton({ data, setData }: dataSetter) {
+  const [rare_control, set_rare_control] = useState(false);
+  function sorter_rare() {
+    let unsorted = [...data];
+    let sorted = rare_control
+      ? unsorted.sort((a: any, b: any) => b[4] - a[4])
+      : unsorted.sort((a: any, b: any) => a[4] - b[4]);
+
+    setData(sorted);
+    set_rare_control(!rare_control);
+  }
+
+  return (
+    <div className="sorter-btn-container">
+      <button onClick={() => sorter_rare()} className="control-btn">
+        레어도
+      </button>
+    </div>
+  );
+}
 export interface CheckedCharacter {
   character_name: string;
 }
