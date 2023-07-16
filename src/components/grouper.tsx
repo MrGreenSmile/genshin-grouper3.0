@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { combinations } from "../datas";
-/*
+
 export interface CheckedCharacter {
   character_name: string;
 }
@@ -11,7 +11,7 @@ export interface CharacterInfo {
 }
 export interface CheckedCharacterList {
   checked_characters: Array<string>;
-}*/
+}
 
 function CharacterCard({
   character_info,

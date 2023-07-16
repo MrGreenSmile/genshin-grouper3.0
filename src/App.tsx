@@ -106,8 +106,8 @@ function ControlButton({ data, setData }: dataSetter) {
   function sorter_rare() {
     let unsorted = [...data];
     let sorted = rare_btn
-      ? unsorted.sort((a: string, b: string) => b[4] - a[4])
-      : unsorted.sort((a: string, b: string) => a[4] - b[4]);
+      ? unsorted.sort((a: Array<any>, b: Array<any>) => b[4] - a[4])
+      : unsorted.sort((a: Array<any>, b: Array<any>) => a[4] - b[4]);
 
     setData(sorted);
     set_rare_btn(!rare_btn);
@@ -115,10 +115,10 @@ function ControlButton({ data, setData }: dataSetter) {
   function sorter_weapon() {
     let unsorted = [...data];
     let sorted = weapon_btn
-      ? unsorted.sort((a: string, b: string) =>
+      ? unsorted.sort((a: Array<any>, b: Array<any>) =>
           a[3] == b[3] ? b[4] - a[4] : a[3].localeCompare(b[3])
         )
-      : unsorted.sort((a: string, b: string) =>
+      : unsorted.sort((a: Array<any>, b: Array<any>) =>
           a[3] == b[3] ? b[4] - a[4] : b[3].localeCompare(a[3])
         );
 
@@ -128,10 +128,10 @@ function ControlButton({ data, setData }: dataSetter) {
   function sorter_element() {
     let unsorted = [...data];
     let sorted = element_btn
-      ? unsorted.sort((a: string, b: string) =>
+      ? unsorted.sort((a: Array<any>, b: Array<any>) =>
           a[2] == b[2] ? b[4] - a[4] : a[2].localeCompare(b[2])
         )
-      : unsorted.sort((a: string, b: string) =>
+      : unsorted.sort((a: Array<any>, b: Array<any>) =>
           a[2] == b[2] ? b[4] - a[4] : b[2].localeCompare(a[2])
         );
 
