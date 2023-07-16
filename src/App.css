@@ -59,6 +59,13 @@ input[type="checkbox"]:checked + label {
   color: white;
   font-weight: bold;
 }
+.sorter-btn-container {
+  position: absolute;
+  right: 5px;
+  margin-top: 10px;
+  width: 75px;
+}
+
 .selected-character img {
   width: 80px;
   height: 100px;

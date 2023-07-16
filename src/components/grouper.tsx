@@ -12,10 +12,6 @@ export interface CharacterInfo {
 export interface CheckedCharacterList {
   checked_characters: Array<string>;
 }
-export interface ModalState {
-  isinfo: React.Dispatch<React.SetStateAction<boolean>>;
-  forinfo: boolean;
-}
 
 function CharacterCard({
   character_info,
