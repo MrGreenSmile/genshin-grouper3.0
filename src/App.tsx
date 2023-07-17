@@ -87,11 +87,11 @@ function CharacterList() {
   );
 }
 
-export interface ModalState {
+export interface informationModalState {
   isinfo: React.Dispatch<React.SetStateAction<boolean>>;
   forinfo: boolean;
 }
-function Information({ isinfo, forinfo }: ModalState) {
+function Information({ isinfo, forinfo }: informationModalState) {
   return (
     <>
       <div
