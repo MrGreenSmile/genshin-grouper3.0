@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { combinations } from "../datas";
 
 export interface CheckedCharacter {
@@ -54,7 +54,7 @@ function CharacterCheckedContainer({
       }
     >
       {/*<div>{checked_list.join("/")}</div>*/}
-      <h2>
+      <h2 id="view_top">
         <div onClick={() => set_view_checked(!view_checked)}>
           선택된 캐릭터
           <span className="selected-number">{checked_characters.length}</span>
@@ -65,6 +65,16 @@ function CharacterCheckedContainer({
       ))}
 
       <Combinations checked_characters={checked_characters} />
+      <div
+        className="to-top"
+        onClick={() =>
+          view_checked
+            ? (location.href = "#view_top")
+            : (location.href = "#top")
+        }
+      >
+        Top
+      </div>
     </div>
   );
 }

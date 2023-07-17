@@ -112,6 +112,18 @@ input[type="checkbox"]:checked + label {
     font-size: 20px;
   }
 }
+.to-top {
+  position: fixed;
+  bottom: 40px;
+  right: 0px;
+
+  background-color: rgb(105, 105, 255);
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  padding: 5px;
+  cursor: pointer;
+}
 
 .combination-container {
   font-weight: bold;
