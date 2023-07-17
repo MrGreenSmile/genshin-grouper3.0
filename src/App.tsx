@@ -5,7 +5,7 @@ import "./App.css";
 import "./characters.css";
 import { CharacterCard, CharacterCheckedContainer } from "./components/grouper";
 import CharacterDetail from "./routes/character";
-import { characters } from "./datas";
+import { characters, combinations } from "./datas";
 
 function App() {
   return (
