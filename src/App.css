@@ -128,3 +128,15 @@ input[type="checkbox"]:checked + label {
 .combination-container {
   font-weight: bold;
 }
+.combination-images {
+  position: relative;
+}
+.combination-character {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 80px;
+  text-align: center;
+  z-index: -1;
+  color: white;
+}
