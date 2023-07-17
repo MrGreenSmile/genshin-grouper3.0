@@ -87,7 +87,18 @@ function Combinations({ checked_characters }: CheckedCharacterList) {
     <div className="combination-container">
       <h3>당장 가능한 조합</h3>
       <h3>해볼만한 조합</h3>
-      {combinations.map((combi) =>
+      {checked_characters.map((checked) =>
+        combinations
+          .filter((combi) => combi.includes(checked))
+          .map((combi) => (
+            <div>
+              {combi.map((ea) => (
+                <img src={"character_card/" + ea + ".webp"} />
+              ))}
+            </div>
+          ))
+      )}
+      {/*combinations.map((combi) =>
         checked_characters.filter((cha) => combi.includes(cha)).length >= 2 ? (
           <div key="">
             {combi.map((ea) => (
@@ -95,7 +106,7 @@ function Combinations({ checked_characters }: CheckedCharacterList) {
             ))}
           </div>
         ) : null
-      )}
+            )*/}
       {/*hutao.map((line) => (
         <div>
           {line.map((ea) => (
