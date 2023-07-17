@@ -1,9 +1,10 @@
-import { useCallback, useState } from "react";
+import { useCallback, useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
 
 import "./App.css";
 import "./characters.css";
 import { CharacterCard, CharacterCheckedContainer } from "./components/grouper";
+import CharacterDetail from "./routes/character";
 import { characters } from "./datas";
 
 function App() {
@@ -12,6 +13,10 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<CharacterList />}></Route>
+          <Route
+            path="/character-detail/:character_id"
+            element={<CharacterDetail />}
+          ></Route>
         </Routes>
       </BrowserRouter>
     </>
@@ -34,9 +39,9 @@ function CharacterList() {
     },
     [checked_list]
   );
-  const checked_clear = useCallback(() => {
+  function checked_clear() {
     set_checked_list([]);
-  }, []);
+  }
 
   return (
     <div className="App">
@@ -156,6 +161,7 @@ function ControlButton({ data, setData }: dataSetter) {
     </div>
   );
 }
+
 export interface CheckedCharacter {
   character_name: string;
 }
