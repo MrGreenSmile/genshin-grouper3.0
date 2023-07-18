@@ -1,4 +1,6 @@
-<https://genshin-grouper.vercel.app/>
+왜인지 카에데하라 카즈하, 산고노미야 코코미, 신학을 누르면 먹통이됨
+
+<https://genshin-grouper.vercel.app/됨
 
 <https://genshin-grouper-new.netlify.app/>
 
