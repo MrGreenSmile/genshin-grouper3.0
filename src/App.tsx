@@ -1,4 +1,4 @@
-import { useCallback, useState, useEffect } from "react";
+import { useCallback, useState } from "react";
 import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
 
 import "./App.css";
@@ -87,11 +87,11 @@ function CharacterList() {
   );
 }
 
-export interface informationModalState {
+export interface informationState {
   isinfo: React.Dispatch<React.SetStateAction<boolean>>;
   forinfo: boolean;
 }
-function Information({ isinfo, forinfo }: informationModalState) {
+function Information({ isinfo, forinfo }: informationState) {
   return (
     <>
       <div

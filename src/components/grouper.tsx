@@ -152,7 +152,7 @@ function CharacterChecked({ character_name }: CheckedCharacter) {
 function Combinations({ checked_characters }: CheckedCharacterList) {
   return (
     <div className="combination-container">
-      <h3>당장 가능한 조합</h3>
+      <h3>지금 가능한 조합</h3>
       <h3>해볼만한 조합</h3>
       {checked_characters.map((checked) =>
         combinations
