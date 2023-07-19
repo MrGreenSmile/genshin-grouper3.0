@@ -129,7 +129,7 @@ const combinations: Array<Array<string>> = [
   ["Ganyu", "Shenhe", "Kaedehara Kazuha", "Bennett"],
   ["Ganyu", "Shenhe", "Sucrose", "Bennett"],
   ["Ganyu", "Shenhe", "Venti", "Sangonomiya Kokomi"],
-  ["감학", "Shenhe", "Kaedehara Kazuha", "Sangonomiya Kokomi"],
+  ["Ganyu", "Shenhe", "Kaedehara Kazuha", "Sangonomiya Kokomi"],
   ["Ganyu", "Shenhe", "Sucrose", "Sangonomiya Kokomi"],
   ["Ganyu", "Shenhe", "Bennett", "Sangonomiya Kokomi"],
   ["Ganyu", "Xiangling", "Zhongli", "Bennett"],
