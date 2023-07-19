@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import "./App.css";
 import "./characters.css";
@@ -101,6 +101,22 @@ function Information({ isinfo, forinfo }: informationState) {
       <div className="information-modall">이것은 안내창이여!</div>
     </>
   );
+}
+
+export interface dataSetter {
+  data: Array<Array<string>>;
+  setData: React.Dispatch<React.SetStateAction<Array<Array<string>>>>;
+}
+export interface CheckedCharacter {
+  character_name: string;
+}
+export interface CharacterInfo {
+  character_info: Array<string>;
+  checked_list: Array<string>;
+  checker: (checked: boolean, id: string) => void;
+}
+export interface CheckedCharacterList {
+  checked_characters: Array<string>;
 }
 
 export default App;
