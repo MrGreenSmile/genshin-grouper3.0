@@ -8,6 +8,7 @@ import {
   CharacterCard,
   CharacterCheckedContainer,
 } from "./components/grouper";
+import Information from "./components/information";
 import CharacterDetail from "./routes/character";
 import { characters } from "./datas";
 
@@ -95,25 +96,6 @@ function CharacterList() {
         <CharacterCheckedContainer checked_characters={checked_list} key="" />
       </div>
     </div>
-  );
-}
-
-export interface informationState {
-  isinfo: React.Dispatch<React.SetStateAction<boolean>>;
-  forinfo: boolean;
-}
-function Information({ isinfo, forinfo }: informationState) {
-  return (
-    <>
-      <div
-        className="information-modall-bg"
-        onClick={() => isinfo(!forinfo)}
-        key=""
-      ></div>
-      <div className="information-modall" key="information-container">
-        이것은 안내창이여!
-      </div>
-    </>
   );
 }
 
