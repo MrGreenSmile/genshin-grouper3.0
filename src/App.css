@@ -16,7 +16,8 @@ body::-webkit-scrollbar-thumb {
   margin-left: 10px;
 }
 .information-closer {
-  float: right;
+  right: 10px;
+  position: absolute;
   font-size: 20px;
   margin: 5px;
   cursor: pointer;
@@ -41,6 +42,15 @@ body::-webkit-scrollbar-thumb {
   color: white;
   border-radius: 10px;
   z-index: 2;
+}
+@media screen and (max-width: 660px) {
+  .information-modall {
+    position: fixed;
+    width: 95%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+  }
 }
 .information-modall::-webkit-scrollbar {
   background-color: skyblue;
@@ -75,6 +85,9 @@ body::-webkit-scrollbar-thumb {
 }
 .image-resource {
   font-size: 12px;
+}
+.information-version {
+  margin: 0px;
 }
 
 .main-container {
