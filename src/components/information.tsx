@@ -1,4 +1,5 @@
 import { useState } from "react";
+import version_information from "./versions";
 
 export interface informationState {
   isinfo: React.Dispatch<React.SetStateAction<boolean>>;
@@ -8,13 +9,21 @@ export interface informationState {
 function Information({ isinfo, forinfo }: informationState) {
   const [toSummary, forSummary] = useState(true);
   const [toHowtoUse, forHowtoUse] = useState(false);
+  const [toVersion, forVersion] = useState(false);
   function summary_view() {
     forSummary(true);
     forHowtoUse(false);
+    forVersion(false);
   }
   function how2use_view() {
     forSummary(false);
     forHowtoUse(true);
+    forVersion(false);
+  }
+  function version_view() {
+    forSummary(false);
+    forHowtoUse(false);
+    forVersion(true);
   }
 
   return (
@@ -37,11 +46,23 @@ function Information({ isinfo, forinfo }: informationState) {
         >
           사용법
         </button>
+        <button
+          onClick={() => version_view()}
+          className="information-summary-btn"
+        >
+          버전 정보
+        </button>
         <span className="information-closer" onClick={() => isinfo(!forinfo)}>
           ⓧ
         </span>
 
-        {toSummary ? <SiteSummary /> : <HowtoUse />}
+        {toSummary ? (
+          <SiteSummary />
+        ) : toHowtoUse ? (
+          <HowtoUse />
+        ) : (
+          <VersionView />
+        )}
       </div>
     </>
   );
@@ -72,12 +93,31 @@ function HowtoUse() {
         하단의 '선택된 캐릭터'를 터치하면 선택된 캐릭터와 결과를 확인할 수
         있습니다.
       </p>
-      <p>'선택된 캐릭터' 하단에 선택한 캐릭터들의 카드가 표시됩니다.</p>
+      <p>
+        '선택된 캐릭터' 하단에 선택한 캐릭터들의 카드가 표시됩니다. 캐릭터의
+        카드를 터치(클릭)하면 상세 페이지로 이동합니다.
+      </p>
       <p>'지금 가능한 조합'에 선택된 캐릭터가 모두 포함된 조합이 표시됩니다.</p>
       <p>
         '해볼만한 조합'에 선택된 캐릭터가 하나 이상 포함된 조합이 표시됩니다.
       </p>
       <p>우측 하단에 Top을 터치(클릭)해 상단으로 이동합니다.</p>
+    </div>
+  );
+}
+function VersionView() {
+  return (
+    <div>
+      {version_information.map((version) => (
+        <p>
+          {version[0]}
+          <ul className="information-version">
+            {version.slice(1).map((list) => (
+              <li>{list}</li>
+            ))}
+          </ul>
+        </p>
+      ))}
     </div>
   );
 }
