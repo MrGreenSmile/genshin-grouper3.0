@@ -10,7 +10,7 @@ import {
 } from "./components/grouper";
 import Information from "./components/information";
 import CharacterDetail from "./routes/character";
-import { characters } from "./datas";
+import { characters } from "./datas/combinations";
 
 function App() {
   return (
