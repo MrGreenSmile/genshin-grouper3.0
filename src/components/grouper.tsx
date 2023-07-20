@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { characters, combinations } from "../datas";
+import { Link, useParams } from "react-router-dom";
+import { characters, combinations } from "../datas/combinations";
 
 export interface dataSetter {
   data: Array<Array<string>>;
@@ -27,8 +28,8 @@ function ControlButton({ data, setData }: dataSetter) {
     setData(temp_data);
   }
   function sorter_rare() {
-    let unsorted = [...data];
-    let sorted = rare_btn
+    const unsorted = [...data];
+    const sorted = rare_btn
       ? unsorted.sort((a: Array<any>, b: Array<any>) => b[4] - a[4])
       : unsorted.sort((a: Array<any>, b: Array<any>) => a[4] - b[4]);
 
@@ -36,8 +37,8 @@ function ControlButton({ data, setData }: dataSetter) {
     set_rare_btn(!rare_btn);
   }
   function sorter_weapon() {
-    let unsorted = [...data];
-    let sorted = weapon_btn
+    const unsorted = [...data];
+    const sorted = weapon_btn
       ? unsorted.sort((a: Array<any>, b: Array<any>) =>
           a[3] == b[3] ? b[4] - a[4] : a[3].localeCompare(b[3])
         )
@@ -49,8 +50,8 @@ function ControlButton({ data, setData }: dataSetter) {
     set_weapon_btn(!weapon_btn);
   }
   function sorter_element() {
-    let unsorted = [...data];
-    let sorted = element_btn
+    const unsorted = [...data];
+    const sorted = element_btn
       ? unsorted.sort((a: Array<any>, b: Array<any>) =>
           a[2] == b[2] ? b[4] - a[4] : a[2].localeCompare(b[2])
         )
@@ -178,10 +179,12 @@ function CharacterCheckedContainer({
 }
 function CharacterChecked({ character_name }: CheckedCharacter) {
   return (
-    <img
-      src={"character_card/" + character_name + ".webp"}
-      key="character-card-img"
-    />
+    <Link to={"/character-detail/" + character_name}>
+      <img
+        src={"character_card/" + character_name + ".webp"}
+        key="character-card-img"
+      />
+    </Link>
   );
 }
 
@@ -210,7 +213,7 @@ function Combinations({ checked_characters }: CheckedCharacterList) {
             ))}
           </div>
         ))}
-      
+
       <h3 key="probably-possible">해볼만한 조합</h3>
       {checked_characters.map((checked) =>
         combinations
