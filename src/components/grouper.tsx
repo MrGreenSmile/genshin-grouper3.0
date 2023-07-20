@@ -189,6 +189,28 @@ function Combinations({ checked_characters }: CheckedCharacterList) {
   return (
     <div className="combination-container" key="result-container">
       <h3 key="now-possible">지금 가능한 조합</h3>
+      {combinations
+        .filter((combi) => combi.every((i) => checked_characters.includes(i)))
+        .map((combi) => (
+          <div key={combi.join("/")}>
+            {combi.map((ea) => (
+              <span className="combination-images" key="combinations">
+                <img
+                  src={"character_card/" + ea + ".webp"}
+                  alt={ea}
+                  key="combinations-member"
+                />
+                <span
+                  className="combination-character"
+                  key="combinations-member-name"
+                >
+                  {characters.filter((char) => char[1] === ea)[0]}
+                </span>
+              </span>
+            ))}
+          </div>
+        ))}
+      
       <h3 key="probably-possible">해볼만한 조합</h3>
       {checked_characters.map((checked) =>
         combinations
