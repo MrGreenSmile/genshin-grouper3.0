@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { characters } from "../datas/combinations";
-import characters_detail from "../datas/characters_detail.json";
+import characters_detail from "../datas/characters_detail";
 
 function CharacterDetail() {
   const { character_id } = useParams() as { character_id: string };
@@ -20,10 +20,9 @@ function CharacterDetail() {
           className="character-detail-card"
           src={"/character_card/" + character_name[1] + ".webp"}
         />
-        <BasicInformation character_detail={character_detail} />
-        <img
-          className="character-card-illust"
-          src={"/character_img/" + character_name[0] + "카드.webp"}
+        <BasicInformation
+          character_name={character_name}
+          character_detail={character_detail}
         />
       </div>
     </div>
@@ -31,10 +30,28 @@ function CharacterDetail() {
 }
 
 export interface detail_info {
-  character_detail: JSON;
+  character_name: Array<string>;
+  character_detail: {
+    name: string;
+    summary: string;
+    profile: {
+      gender: string;
+      rareness: string;
+      element: string;
+      weapon: string;
+      constellation: string;
+      birthday: string;
+      union: string;
+      actor: Array<string>;
+      cook: {
+        name: string;
+        content: string;
+      };
+    };
+  };
 }
 
-function BasicInformation({ character_detail }: detail_info) {
+function BasicInformation({ character_name, character_detail }: detail_info) {
   return (
     <div>
       <h2>기본 정보</h2>
@@ -44,6 +61,62 @@ function BasicInformation({ character_detail }: detail_info) {
           <p key="">{summ}</p>
         ))}
       </div>
+
+      <h3>프로필</h3>
+      <div className="character-profile">
+        <div className="left">
+          <img
+            className="character-card-illust"
+            src={"/character_img/" + character_name[0] + "카드.webp"}
+          />
+        </div>
+        <div className="right">
+          <div className="character-profile-column">이름</div>
+          <div className="character-profile-content">
+            {character_detail.name + "(" + character_name[1] + ")"}
+          </div>
+          <div className="character-profile-column">성별</div>
+          <div className="character-profile-content">
+            {character_detail.profile.gender}
+          </div>
+          <div className="character-profile-column">등급</div>
+          <div className="character-profile-content">
+            {character_detail.profile.rareness}
+          </div>
+          <div className="character-profile-column">신의 눈</div>
+          <div className="character-profile-content">
+            {character_detail.profile.element}
+          </div>
+          <div className="character-profile-column">무기</div>
+          <div className="character-profile-content">
+            {character_detail.profile.weapon}
+          </div>
+          <div className="character-profile-column">운명의 자리</div>
+          <div className="character-profile-content">
+            {character_detail.profile.constellation}
+          </div>
+          <div className="character-profile-column">생일</div>
+          <div className="character-profile-content">
+            {character_detail.profile.birthday}
+          </div>
+          <div className="character-profile-column">소속</div>
+          <div className="character-profile-content">
+            {character_detail.profile.union}
+          </div>
+          <div className="character-profile-column">성우</div>
+          <div className="character-profile-content">
+            {character_detail.profile.actor.map((actor) => (
+              <div key="">{actor}</div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <h3>특제 요리</h3>
+      <div>{character_detail.profile.cook.name}</div>
+      <img
+        src={"/character_img/" + character_detail.profile.cook.name + ".webp"}
+      />
     </div>
   );
 }
