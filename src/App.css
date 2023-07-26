@@ -201,3 +201,49 @@ input[type="checkbox"]:checked + label {
   z-index: -1;
   color: white;
 }
+
+.main-container {
+  padding: 10px;
+}
+.character-detail-card {
+  width: 120px;
+}
+.character-card-illust {
+  width: 250px;
+}
+.character-summary {
+  text-indent: 10px;
+}
+.character-profile {
+  display: grid;
+  grid-template-columns: 260px auto;
+
+  align-items: center;
+  background-color: skyblue;
+  color: white;
+}
+.character-profile > .left {
+  padding: 5px;
+}
+.character-profile > .right {
+  display: grid;
+  grid-template-columns: 100px auto;
+}
+.character-profile > .right > div {
+  margin: 1px;
+  padding: 1px;
+  border: 1px solid white;
+}
+.character-profile-column {
+  text-align: right;
+}
+
+@media screen and (max-width: 660px) {
+  .character-profile {
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+  }
+  .character-profile > .left {
+    text-align: center;
+  }
+}
