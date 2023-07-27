@@ -247,3 +247,22 @@ input[type="checkbox"]:checked + label {
     text-align: center;
   }
 }
+.character-profile-2nd {
+  display: grid;
+  grid-template-columns: 260px auto;
+
+  align-items: center;
+  background-color: skyblue;
+  color: white;
+}
+.character-profile-2nd .right {
+  padding: 10px;
+  border: 1px solid white;
+  height: 100%;
+}
+.character-profile-2nd .right p {
+  text-indent: 10px;
+}
+.profile-describtion {
+  font-style: italic;
+}

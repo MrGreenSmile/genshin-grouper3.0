@@ -113,10 +113,29 @@ function BasicInformation({ character_name, character_detail }: detail_info) {
       </div>
 
       <h3>특제 요리</h3>
-      <div>{character_detail.profile.cook.name}</div>
-      <img
-        src={"/character_img/" + character_detail.profile.cook.name + ".webp"}
-      />
+      <div className="character-profile-2nd">
+        <div className="left">
+          <img
+            src={
+              "/character_img/" + character_detail.profile.cook.name + ".webp"
+            }
+          />
+        </div>
+        <div className="right">
+          <h3>{character_detail.profile.cook.name}</h3>
+          <div>
+            {character_detail.profile.cook.content
+              .split("\n")
+              .slice(0, -1)
+              .map((content) => (
+                <p>{content}</p>
+              ))}
+            <p className="profile-describtion">
+              {character_detail.profile.cook.content.split("\n").slice(-1)}
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
