@@ -47,6 +47,10 @@ export interface detail_info {
         name: string;
         content: string;
       };
+      materials: {
+        penetration: Array<string | Array<string>>;
+        skills: Array<string | Array<string>>;
+      };
     };
   };
 }
@@ -133,6 +137,34 @@ function BasicInformation({ character_name, character_detail }: detail_info) {
             <p className="profile-describtion">
               {character_detail.profile.cook.content.split("\n").slice(-1)}
             </p>
+          </div>
+        </div>
+      </div>
+
+      <h3>재료</h3>
+      <div className="character-materials">
+        <div className="character-materials-column">
+          <div>돌파재료</div>
+          <div className="materials-imgs">
+            {character_detail.profile.materials.penetration.map((metarial) =>
+              Array.isArray(metarial) ? (
+                <img src={"/materials/" + metarial[0] + ".webp"} />
+              ) : (
+                <img src={"/materials/" + metarial + ".webp"} />
+              )
+            )}
+          </div>
+        </div>
+        <div className="character-materials-column">
+          <div>특성재료</div>
+          <div className="materials-imgs">
+            {character_detail.profile.materials.skills.map((metarial) =>
+              Array.isArray(metarial) ? (
+                <img src={"/materials/" + metarial[0] + ".webp"} />
+              ) : (
+                <img src={"/materials/" + metarial + ".webp"} />
+              )
+            )}
           </div>
         </div>
       </div>
