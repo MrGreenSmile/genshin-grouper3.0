@@ -1,3 +1,6 @@
+* {
+  font-family: "Nanum Gothic" !important;
+}
 body::-webkit-scrollbar {
   background: none;
   width: 10px;
@@ -238,15 +241,6 @@ input[type="checkbox"]:checked + label {
   text-align: right;
 }
 
-@media screen and (max-width: 660px) {
-  .character-profile {
-    grid-template-columns: auto;
-    grid-template-rows: auto auto;
-  }
-  .character-profile > .left {
-    text-align: center;
-  }
-}
 .character-profile-2nd {
   display: grid;
   grid-template-columns: 260px auto;
@@ -263,6 +257,62 @@ input[type="checkbox"]:checked + label {
 .character-profile-2nd .right p {
   text-indent: 10px;
 }
+.character-profile-2nd::selection {
+  background-color: white;
+  color: skyblue;
+}
+.character-materials {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  background-color: skyblue;
+}
+.character-materials-column {
+  border: 1px solid white;
+  color: white;
+}
+.character-materials-column::selection {
+  background-color: white;
+  color: skyblue;
+}
+.character-materials-column > div {
+  text-align: center;
+}
+.character-materials-column > div:nth-child(1) {
+  border-bottom: 1px solid white;
+}
+.materials-imgs {
+  display: flex;
+  align-items: center;
+
+  width: 1fr;
+  text-align: center;
+}
+.materials-imgs > img {
+  width: 100px;
+}
+
 .profile-describtion {
-  font-style: italic;
+  font-weight: bold;
+  font-style: oblique;
+}
+@media screen and (max-width: 660px) {
+  .character-profile {
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+  }
+  .character-profile > .left {
+    text-align: center;
+  }
+
+  .character-profile-2nd {
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+  }
+  .character-materials {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    background-color: skyblue;
+  }
 }

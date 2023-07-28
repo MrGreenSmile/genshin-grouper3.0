@@ -1,3 +1,5 @@
+import * as materials from "./materials";
+
 const characters_detail = [
   {
     name: "다이루크",
@@ -15,7 +17,21 @@ const characters_detail = [
       cook: {
         name: "몬드의 과거",
         content:
-          "'높이 쌓기' 제작 시 획득 가능.\n파티 내 모든 캐릭터의 치명타 확률이 20%, 치명타 대미지가 20% 증가한다 (지속시간 : 300초). 다인 모드 시, 자신의 캐릭터에게만 적용.\n다이루크",
+          "'높이 쌓기' 제작 시 획득 가능.\n파티 내 모든 캐릭터의 치명타 확률이 20%, 치명타 대미지가 20% 증가한다 (지속시간 : 300초). 다인 모드 시, 자신의 캐릭터에게만 적용.\n다이루크의 특제요리. 우선 눈으로 정교하고 섬세한 플레이팅을 음미한 후, 입에 넣으면 부드러운 고기가 입에서 살살 녹는다. 흠.. 어르신이 이런 솜씨가 있을 줄을 몰랐네?",
+      },
+      materials: {
+        penetration: [
+          materials.manos,
+          "꺼지지 않는 불씨",
+          "등불꽃",
+          materials.fatui_medal,
+        ],
+        skills: [
+          materials.conflicts,
+          "동풍의 깃털",
+          materials.fatui_medal,
+          "지식의 왕관",
+        ],
       },
     },
   },
