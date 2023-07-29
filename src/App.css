@@ -16,6 +16,12 @@ body::-webkit-scrollbar-thumb {
   border-radius: 10px;
   border: 1px solid white;
 }
+p {
+  text-indent: 10px;
+}
+h4 {
+  font-size: 17px;
+}
 
 .information-btn {
   cursor: pointer;
@@ -68,9 +74,6 @@ body::-webkit-scrollbar-thumb {
 .information-modall::-webkit-scrollbar-thumb {
   background-color: white;
   border-radius: 10px;
-}
-.information-modall p {
-  text-indent: 10px;
 }
 .information-summary-btn {
   padding: 5px;
@@ -213,14 +216,15 @@ input[type="checkbox"]:checked + label {
 .main-container {
   padding: 10px;
 }
+.profile-describtion {
+  font-weight: bold;
+  font-style: oblique;
+}
 .character-detail-card {
   width: 120px;
 }
 .character-card-illust {
   width: 250px;
-}
-.character-summary {
-  text-indent: 10px;
 }
 .character-profile {
   display: grid;
@@ -259,13 +263,6 @@ input[type="checkbox"]:checked + label {
   border: 1px solid white;
   height: 100%;
 }
-.character-profile-cook .right p {
-  text-indent: 10px;
-}
-.character-profile-cook::selection {
-  background-color: white;
-  color: skyblue;
-}
 .character-materials {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -276,10 +273,6 @@ input[type="checkbox"]:checked + label {
   border: 1px solid white;
   color: white;
   cursor: pointer;
-}
-.character-materials-column::selection {
-  background-color: white;
-  color: skyblue;
 }
 .character-materials-column > div {
   text-align: center;
@@ -336,11 +329,28 @@ input[type="checkbox"]:checked + label {
   border: blue 1px solid;
   border-radius: 20px;
 }
+.character-skills {
+  display: grid;
+  grid-template-columns: 105px 1fr;
 
-.profile-describtion {
-  font-weight: bold;
-  font-style: oblique;
+  background-color: skyblue;
 }
+.character-skills div {
+  border: 1px solid white;
+  min-height: 100px;
+  color: white;
+}
+.character-skills div:nth-child(2n-1) {
+  display: flex;
+  align-items: center;
+}
+.character-skills div:nth-child(2n) {
+  padding: 10px;
+}
+.character-skills img {
+  width: 100px;
+}
+
 @media screen and (max-width: 850px) {
   .materials-imgs > div > img {
     width: 100%;
