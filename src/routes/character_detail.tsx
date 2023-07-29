@@ -94,8 +94,8 @@ function SpecialCook({ special_cook }: special_cook) {
           {special_cook.content
             .split("\n")
             .slice(0, -1)
-            .map((content) => (
-              <p>{content}</p>
+            .map((line) => (
+              <p>{line}</p>
             ))}
           <p className="profile-describtion">
             {special_cook.content.split("\n").slice(-1)}
