@@ -1,5 +1,5 @@
 //  ---보석
-const gem = ["가루", "덩이", "조각", ""];
+const gem = ["가루", "조각", "덩이", ""];
 const geo = "단단한 황옥";
 const mano = "불타오르는 마노";
 const frozen = "서늘한 빙옥";

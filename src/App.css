@@ -1,6 +1,11 @@
 * {
   font-family: "Nanum Gothic" !important;
 }
+
+::selection {
+  background-color: white;
+  color: skyblue;
+}
 body::-webkit-scrollbar {
   background: none;
   width: 10px;
@@ -270,6 +275,7 @@ input[type="checkbox"]:checked + label {
 .character-materials-column {
   border: 1px solid white;
   color: white;
+  cursor: pointer;
 }
 .character-materials-column::selection {
   background-color: white;
@@ -285,16 +291,61 @@ input[type="checkbox"]:checked + label {
   display: flex;
   align-items: center;
 
-  width: 1fr;
-  text-align: center;
+  width: 100%;
 }
-.materials-imgs > img {
-  width: 100px;
+.materials-imgs > div {
+  text-align: center;
+  width: 100%;
+}
+.materials-imgs > div > img {
+  height: 100px;
+}
+
+.character-materials-list {
+  position: absolute;
+  background-color: skyblue;
+  border-radius: 10px;
+  width: 500px;
+}
+.character-materials-list-line {
+  display: grid;
+  grid-template-columns: repeat(5, 100px);
+  grid-template-rows: 75px;
+}
+.character-materials-list-line div {
+  position: relative;
+  border: 1px solid white;
+  border-radius: 5px;
+  text-align: center;
+
+  font-weight: bold;
+}
+.character-materials-list-line div img {
+  max-width: 75px;
+  max-height: 75px;
+}
+.character-materials-list-line .materials-count {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  padding-bottom: 5px;
+  width: 20px;
+  height: 20px;
+  background-color: skyblue;
+  border: blue 1px solid;
+  border-radius: 20px;
 }
 
 .profile-describtion {
   font-weight: bold;
   font-style: oblique;
+}
+@media screen and (max-width: 850px) {
+  .materials-imgs > div > img {
+    width: 100%;
+    height: 20%;
+  }
 }
 @media screen and (max-width: 660px) {
   .character-profile {
@@ -314,5 +365,17 @@ input[type="checkbox"]:checked + label {
     grid-template-columns: 1fr;
 
     background-color: skyblue;
+  }
+  .materials-imgs > div > img {
+    width: 50%;
+    height: 50%;
+  }
+  .character-materials-list {
+    width: 375px;
+  }
+  .character-materials-list-line {
+    display: grid;
+    grid-template-columns: repeat(5, 75px);
+    grid-template-rows: 75px;
   }
 }
