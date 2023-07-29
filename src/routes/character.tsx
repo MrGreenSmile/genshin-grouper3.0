@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { characters } from "../datas/combinations";
 import characters_detail from "../datas/characters_detail";
@@ -56,6 +57,17 @@ export interface detail_info {
 }
 
 function BasicInformation({ character_name, character_detail }: detail_info) {
+  const [penetrator, setPenetrator] = useState(false);
+  const [skillor, setSkillor] = useState(false);
+  function material_penetrator() {
+    setPenetrator(!penetrator);
+    setSkillor(false);
+  }
+  function material_skillor() {
+    setPenetrator(false);
+    setSkillor(!skillor);
+  }
+
   return (
     <div>
       <h2>기본 정보</h2>
@@ -143,29 +155,324 @@ function BasicInformation({ character_name, character_detail }: detail_info) {
 
       <h3>재료</h3>
       <div className="character-materials">
-        <div className="character-materials-column">
+        <div
+          className="character-materials-column"
+          onClick={() => material_penetrator()}
+        >
           <div>돌파재료</div>
           <div className="materials-imgs">
             {character_detail.profile.materials.penetration.map((metarial) =>
               Array.isArray(metarial) ? (
-                <img src={"/materials/" + metarial[0] + ".webp"} />
+                <div>
+                  <img src={"/materials/" + metarial.slice(-1) + ".webp"} />
+                </div>
               ) : (
-                <img src={"/materials/" + metarial + ".webp"} />
+                <div>
+                  <img src={"/materials/" + metarial + ".webp"} />
+                </div>
               )
             )}
           </div>
         </div>
-        <div className="character-materials-column">
+        <div
+          className="character-materials-column"
+          onClick={() => material_skillor()}
+        >
           <div>특성재료</div>
           <div className="materials-imgs">
             {character_detail.profile.materials.skills.map((metarial) =>
               Array.isArray(metarial) ? (
-                <img src={"/materials/" + metarial[0] + ".webp"} />
+                <div>
+                  <img src={"/materials/" + metarial.slice(-1) + ".webp"} />
+                </div>
               ) : (
-                <img src={"/materials/" + metarial + ".webp"} />
+                <div>
+                  <img src={"/materials/" + metarial + ".webp"} />
+                </div>
               )
             )}
           </div>
+        </div>
+      </div>
+      {penetrator ? (
+        <PenetrationMaterial
+          materials={character_detail.profile.materials.penetration}
+        />
+      ) : null}
+      {skillor ? (
+        <SkillsMaterial materials={character_detail.profile.materials.skills} />
+      ) : null}
+    </div>
+  );
+}
+
+export interface penetration_materials {
+  materials: Array<Array<string> | string>;
+}
+
+function PenetrationMaterial({ materials }: penetration_materials) {
+  return (
+    <div className="character-materials-list">
+      <div className="character-materials-list-line">
+        <div>lv.20</div>
+        <div>
+          <img src={"/materials/" + materials[0][0] + ".webp"} />
+          <div className="materials-count">1</div>
+        </div>
+        <div></div>
+        <div>
+          <img src={"/materials/" + materials[2] + ".webp"} />
+          <div className="materials-count">3</div>
+        </div>
+        <div>
+          <img src={"/materials/" + materials[3][0] + ".webp"} />
+          <div className="materials-count">3</div>
+        </div>
+      </div>
+
+      <div className="character-materials-list-line">
+        <div>lv.40</div>
+        <div>
+          <img src={"/materials/" + materials[0][1] + ".webp"} />
+          <div className="materials-count">3</div>
+        </div>
+        <div>
+          <img src={"/materials/" + materials[1] + ".webp"} />
+          <div className="materials-count">2</div>
+        </div>
+        <div>
+          <img src={"/materials/" + materials[2] + ".webp"} />
+          <div className="materials-count">10</div>
+        </div>
+        <div>
+          <img src={"/materials/" + materials[3][0] + ".webp"} />
+          <div className="materials-count">15</div>
+        </div>
+      </div>
+
+      <div className="character-materials-list-line">
+        <div>lv.50</div>
+        <div>
+          <img src={"/materials/" + materials[0][1] + ".webp"} />
+          <div className="materials-count">6</div>
+        </div>
+        <div>
+          <img src={"/materials/" + materials[1] + ".webp"} />
+          <div className="materials-count">4</div>
+        </div>
+        <div>
+          <img src={"/materials/" + materials[2] + ".webp"} />
+          <div className="materials-count">20</div>
+        </div>
+        <div>
+          <img src={"/materials/" + materials[3][1] + ".webp"} />
+          <div className="materials-count">12</div>
+        </div>
+      </div>
+
+      <div className="character-materials-list-line">
+        <div>lv.60</div>
+        <div>
+          <img src={"/materials/" + materials[0][2] + ".webp"} />
+          <div className="materials-count">3</div>
+        </div>
+        <div>
+          <img src={"/materials/" + materials[1] + ".webp"} />
+          <div className="materials-count">8</div>
+        </div>
+        <div>
+          <img src={"/materials/" + materials[2] + ".webp"} />
+          <div className="materials-count">30</div>
+        </div>
+        <div>
+          <img src={"/materials/" + materials[3][1] + ".webp"} />
+          <div className="materials-count">18</div>
+        </div>
+      </div>
+
+      <div className="character-materials-list-line">
+        <div>lv.70</div>
+        <div>
+          <img src={"/materials/" + materials[0][2] + ".webp"} />
+          <div className="materials-count">6</div>
+        </div>
+        <div>
+          <img src={"/materials/" + materials[1] + ".webp"} />
+          <div className="materials-count">12</div>
+        </div>
+        <div>
+          <img src={"/materials/" + materials[2] + ".webp"} />
+          <div className="materials-count">45</div>
+        </div>
+        <div>
+          <img src={"/materials/" + materials[3][2] + ".webp"} />
+          <div className="materials-count">12</div>
+        </div>
+      </div>
+
+      <div className="character-materials-list-line">
+        <div>lv.80</div>
+        <div>
+          <img src={"/materials/" + materials[0][3] + ".webp"} />
+          <div className="materials-count">6</div>
+        </div>
+        <div>
+          <img src={"/materials/" + materials[1] + ".webp"} />
+          <div className="materials-count">20</div>
+        </div>
+        <div>
+          <img src={"/materials/" + materials[2] + ".webp"} />
+          <div className="materials-count">60</div>
+        </div>
+        <div>
+          <img src={"/materials/" + materials[3][2] + ".webp"} />
+          <div className="materials-count">24</div>
+        </div>
+      </div>
+    </div>
+  );
+}
+function SkillsMaterial({ materials }: penetration_materials) {
+  return (
+    <div className="character-materials-list">
+      <div className="character-materials-list-line">
+        <div>lv.2</div>
+        <div>
+          <img src={"/materials/" + materials[0][0] + ".webp"} />
+          <div className="materials-count">3</div>
+        </div>
+        <div></div>
+        <div>
+          <img src={"/materials/" + materials[2][0] + ".webp"} />
+          <div className="materials-count">6</div>
+        </div>
+        <div></div>
+      </div>
+
+      <div className="character-materials-list-line">
+        <div>lv.3</div>
+        <div>
+          <img src={"/materials/" + materials[0][1] + ".webp"} />
+          <div className="materials-count">2</div>
+        </div>
+        <div></div>
+        <div>
+          <img src={"/materials/" + materials[2][1] + ".webp"} />
+          <div className="materials-count">3</div>
+        </div>
+        <div></div>
+      </div>
+
+      <div className="character-materials-list-line">
+        <div>lv.4</div>
+        <div>
+          <img src={"/materials/" + materials[0][1] + ".webp"} />
+          <div className="materials-count">4</div>
+        </div>
+        <div></div>
+        <div>
+          <img src={"/materials/" + materials[2][1] + ".webp"} />
+          <div className="materials-count">4</div>
+        </div>
+        <div></div>
+      </div>
+
+      <div className="character-materials-list-line">
+        <div>lv.5</div>
+        <div>
+          <img src={"/materials/" + materials[0][1] + ".webp"} />
+          <div className="materials-count">6</div>
+        </div>
+        <div></div>
+        <div>
+          <img src={"/materials/" + materials[2][1] + ".webp"} />
+          <div className="materials-count">6</div>
+        </div>
+        <div></div>
+      </div>
+
+      <div className="character-materials-list-line">
+        <div>lv.6</div>
+        <div>
+          <img src={"/materials/" + materials[0][1] + ".webp"} />
+          <div className="materials-count">9</div>
+        </div>
+        <div></div>
+        <div>
+          <img src={"/materials/" + materials[2][1] + ".webp"} />
+          <div className="materials-count">9</div>
+        </div>
+        <div></div>
+      </div>
+
+      <div className="character-materials-list-line">
+        <div>lv.7</div>
+        <div>
+          <img src={"/materials/" + materials[0][2] + ".webp"} />
+          <div className="materials-count">4</div>
+        </div>
+        <div>
+          <img src={"/materials/" + materials[1] + ".webp"} />
+          <div className="materials-count">1</div>
+        </div>
+        <div>
+          <img src={"/materials/" + materials[2][2] + ".webp"} />
+          <div className="materials-count">4</div>
+        </div>
+        <div></div>
+      </div>
+
+      <div className="character-materials-list-line">
+        <div>lv.8</div>
+        <div>
+          <img src={"/materials/" + materials[0][2] + ".webp"} />
+          <div className="materials-count">6</div>
+        </div>
+        <div>
+          <img src={"/materials/" + materials[1] + ".webp"} />
+          <div className="materials-count">1</div>
+        </div>
+        <div>
+          <img src={"/materials/" + materials[2][2] + ".webp"} />
+          <div className="materials-count">6</div>
+        </div>
+        <div></div>
+      </div>
+
+      <div className="character-materials-list-line">
+        <div>lv.9</div>
+        <div>
+          <img src={"/materials/" + materials[0][2] + ".webp"} />
+          <div className="materials-count">12</div>
+        </div>
+        <div>
+          <img src={"/materials/" + materials[1] + ".webp"} />
+          <div className="materials-count">2</div>
+        </div>
+        <div>
+          <img src={"/materials/" + materials[2][2] + ".webp"} />
+          <div className="materials-count">9</div>
+        </div>
+        <div></div>
+      </div>
+
+      <div className="character-materials-list-line">
+        <div>lv.10</div>
+        <div>
+          <img src={"/materials/" + materials[0][2] + ".webp"} />
+          <div className="materials-count">16</div>
+        </div>
+        <div>
+          <img src={"/materials/" + materials[1] + ".webp"} />
+          <div className="materials-count">2</div>
+        </div>
+        <div>
+          <img src={"/materials/" + materials[2][2] + ".webp"} />
+          <div className="materials-count">12</div>
+        </div>
+        <div>
+          <img src={"/materials/" + materials[3] + ".webp"} />
+          <div className="materials-count">1</div>
         </div>
       </div>
     </div>
