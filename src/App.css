@@ -246,7 +246,7 @@ input[type="checkbox"]:checked + label {
   text-align: right;
 }
 
-.character-profile-2nd {
+.character-profile-cook {
   display: grid;
   grid-template-columns: 260px auto;
 
@@ -254,15 +254,15 @@ input[type="checkbox"]:checked + label {
   background-color: skyblue;
   color: white;
 }
-.character-profile-2nd .right {
+.character-profile-cook .right {
   padding: 10px;
   border: 1px solid white;
   height: 100%;
 }
-.character-profile-2nd .right p {
+.character-profile-cook .right p {
   text-indent: 10px;
 }
-.character-profile-2nd::selection {
+.character-profile-cook::selection {
   background-color: white;
   color: skyblue;
 }
@@ -356,7 +356,7 @@ input[type="checkbox"]:checked + label {
     text-align: center;
   }
 
-  .character-profile-2nd {
+  .character-profile-cook {
     grid-template-columns: auto;
     grid-template-rows: auto auto;
   }
