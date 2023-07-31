@@ -27,9 +27,9 @@ const industry = "근면";
 const prosperity = "번영";
 const golden = "황금";
 
-const fusei = "부세";
-const tenkou = "천광";
-const fuuga = "풍아";
+const transience = "부세";
+const skylight = "천광";
+const elegance = "풍아";
 
 const remonstrance = "간언";
 const implement = "실천";
@@ -43,9 +43,9 @@ const industries = book_name.map((book) => industry + "의 " + book);
 const prosperities = book_name.map((book) => prosperity + "의 " + book);
 const goldens = book_name.map((book) => golden + "의 " + book);
 
-const fuuseis = book_name.map((book) => fusei + "의 " + book);
-const tenkous = book_name.map((book) => tenkou + "의 " + book);
-const fuugas = book_name.map((book) => fuuga + "의 " + book);
+const transiences = book_name.map((book) => transience + "의 " + book);
+const skylights = book_name.map((book) => skylight + "의 " + book);
+const elegances = book_name.map((book) => elegance + "의 " + book);
 
 const remonstrances = book_name.map((book) => remonstrance + "의 " + book);
 const implementes = book_name.map((book) => implement + "의 " + book);
@@ -87,9 +87,9 @@ export {
   industries,
   prosperities,
   goldens,
-  fuuseis,
-  tenkous,
-  fuugas,
+  transiences,
+  skylights,
+  elegances,
   remonstrances,
   implementes,
   creativities,

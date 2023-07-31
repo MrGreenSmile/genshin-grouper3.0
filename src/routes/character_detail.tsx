@@ -445,4 +445,175 @@ function Materials({ penetration_materials, skill_materials }: materials) {
   );
 }
 
-export { CharacterProfile, SpecialCook, Materials };
+export interface character_skills {
+  character_name: string;
+  character_skill: {
+    normal_attack: {
+      name: string;
+      content: string;
+    };
+    normal_skill: {
+      name: string;
+      content: string;
+    };
+    ultimate_skill: {
+      name: string;
+      content: string;
+    };
+    break_skills: {
+      first: {
+        name: string;
+        content: string;
+      };
+      fourth: {
+        name: string;
+        content: string;
+      };
+    };
+    inherence_skills: {
+      name: string;
+      content: string;
+    };
+    constellation: {
+      name: string;
+      content: string;
+    }[];
+  };
+}
+function Skills({ character_name, character_skill }: character_skills) {
+  return (
+    <>
+      <h4>기본 특성</h4>
+      <div className="character-skills">
+        <div>
+          <img src={"/character_img/" + character_name + "기본공격.webp"} />
+        </div>
+        <div>
+          <h3>기본 공격</h3>
+          <h4>{character_skill.normal_attack.name}</h4>
+          {character_skill.normal_attack.content.split("\n").map((line) => (
+            <p>{line}</p>
+          ))}
+        </div>
+
+        <div>
+          <img src={"/character_img/" + character_name + "전투스킬.webp"} />
+        </div>
+        <div>
+          <h3>원소 전투</h3>
+          <SkillContents skill_detail={character_skill.normal_skill} />
+        </div>
+
+        <div>
+          <img src={"/character_img/" + character_name + "폭발스킬.webp"} />
+        </div>
+        <div>
+          <h3>원소 폭발</h3>
+          <SkillContents skill_detail={character_skill.ultimate_skill} />
+        </div>
+      </div>
+
+      <h4>돌파 특성</h4>
+      <div className="character-skills">
+        <div>
+          <img src={"/character_img/" + character_name + "돌파특성1.webp"} />
+        </div>
+        <div>
+          <h3>1단계 돌파</h3>
+          <SkillContent skill_detail={character_skill.break_skills.first} />
+        </div>
+
+        <div>
+          <img src={"/character_img/" + character_name + "돌파특성2.webp"} />
+        </div>
+        <div>
+          <h3>4단계 돌파</h3>
+          <SkillContent skill_detail={character_skill.break_skills.fourth} />
+        </div>
+      </div>
+
+      <h4>고유 특성</h4>
+      <div className="character-skills">
+        <div>
+          <img src={"/character_img/" + character_name + "고유특성.webp"} />
+        </div>
+        <div>
+          <SkillContent skill_detail={character_skill.inherence_skills} />
+        </div>
+      </div>
+
+      <h4>운명의 자리</h4>
+      <div className="character-skills">
+        {character_skill.constellation.map((constel) => (
+          <SkillConstellation
+            character_name={character_name}
+            id={character_skill.constellation.indexOf(constel)}
+            skill_detail={constel}
+          />
+        ))}
+      </div>
+    </>
+  );
+}
+export interface skills_detail {
+  skill_detail: {
+    name: string;
+    content: string;
+  };
+}
+function SkillContents({ skill_detail }: skills_detail) {
+  return (
+    <>
+      <h4>{skill_detail.name}</h4>
+      {skill_detail.content
+        .split("\n")
+        .slice(0, -1)
+        .map((line) => (
+          <p>{line}</p>
+        ))}
+      <p className="profile-describtion">
+        {skill_detail.content.split("\n").slice(-1)}
+      </p>
+    </>
+  );
+}
+function SkillContent({ skill_detail }: skills_detail) {
+  return (
+    <>
+      <h4>{skill_detail.name}</h4>
+      {skill_detail.content.split("\n").map((line) => (
+        <p>{line}</p>
+      ))}
+    </>
+  );
+}
+export interface constellation_detail {
+  character_name: string;
+  id: number;
+  skill_detail: {
+    name: string;
+    content: string;
+  };
+}
+function SkillConstellation({
+  character_name,
+  id,
+  skill_detail,
+}: constellation_detail) {
+  return (
+    <>
+      <div>
+        <img
+          src={
+            "/character_img/" + character_name + "별자리" + (id + 1) + ".webp"
+          }
+        />
+      </div>
+      <div>
+        <SkillContent skill_detail={skill_detail} />
+      </div>
+    </>
+  );
+}
+
+export { CharacterProfile, SpecialCook, Materials, Skills };

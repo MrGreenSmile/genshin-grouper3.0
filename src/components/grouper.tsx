@@ -238,22 +238,6 @@ function Combinations({ checked_characters }: CheckedCharacterList) {
             </div>
           ))
       )}
-      {/*combinations.map((combi) =>
-        checked_characters.filter((cha) => combi.includes(cha)).length >= 2 ? (
-          <div key="">
-            {combi.map((ea) => (
-              <img src={"character_card/" + ea + ".webp"} key="" />
-            ))}
-          </div>
-        ) : null
-            )*/}
-      {/*hutao.map((line) => (
-        <div>
-          {line.map((ea) => (
-            <img src={"character_card/" + ea + ".webp"} />
-          ))}
-        </div>
-          ))*/}
     </div>
   );
 }

@@ -296,7 +296,7 @@ input[type="checkbox"]:checked + label {
 
 .character-materials-list {
   position: absolute;
-  background-color: skyblue;
+  background-color: white;
   border-radius: 10px;
   width: 500px;
 }
@@ -307,6 +307,7 @@ input[type="checkbox"]:checked + label {
 }
 .character-materials-list-line div {
   position: relative;
+  background-color: skyblue;
   border: 1px solid white;
   border-radius: 5px;
   text-align: center;
