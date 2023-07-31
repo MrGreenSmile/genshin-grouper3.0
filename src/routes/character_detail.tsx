@@ -1,5 +1,5 @@
 import { useState } from "react";
-//
+
 export interface profile {
   character_names: Array<string>;
   character_name: string;
@@ -15,6 +15,10 @@ export interface profile {
     cook: {
       name: string;
       content: string;
+    };
+    materials: {
+      penetration: Array<Array<string> | string>;
+      skills: Array<Array<string> | string>;
     };
   };
 }
@@ -473,11 +477,11 @@ export interface character_skills {
     inherence_skills: {
       name: string;
       content: string;
-    };
+    } /*
     constellation: {
       name: string;
       content: string;
-    }[];
+    }[];*/;
   };
 }
 function Skills({ character_name, character_skill }: character_skills) {
@@ -541,7 +545,7 @@ function Skills({ character_name, character_skill }: character_skills) {
           <SkillContent skill_detail={character_skill.inherence_skills} />
         </div>
       </div>
-
+      {/*
       <h4>운명의 자리</h4>
       <div className="character-skills">
         {character_skill.constellation.map((constel) => (
@@ -552,6 +556,7 @@ function Skills({ character_name, character_skill }: character_skills) {
           />
         ))}
       </div>
+        */}
     </>
   );
 }
@@ -587,6 +592,7 @@ function SkillContent({ skill_detail }: skills_detail) {
     </>
   );
 }
+/*
 export interface constellation_detail {
   character_name: string;
   id: number;
@@ -615,5 +621,5 @@ function SkillConstellation({
     </>
   );
 }
-
+*/
 export { CharacterProfile, SpecialCook, Materials, Skills };
