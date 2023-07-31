@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { characters } from "../datas/combinations";
-
+//
 import characters_detail from "../datas/characters_detail";
 import * as Details from "./character_detail";
 
