@@ -1,7 +1,7 @@
-import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { characters } from "../datas/combinations";
 
+import "./character_detail.css";
 import characters_detail from "../datas/characters_detail";
 import * as Details from "./character_detail";
 
@@ -100,63 +100,11 @@ function BasicInformation({ character_name, character_detail }: detail_info) {
       />
 
       <h3>특성</h3>
-      <h4>기본 특성</h4>
-      <div className="character-skills">
-        <div>
-          <img src={"/character_img/" + character_name[0] + "기본공격.webp"} />
-        </div>
-        <div>
-          <h3>기본 공격</h3>
-          <h4>{character_detail.skills.normal_attack.name}</h4>
-          {character_detail.skills.normal_attack.content
-            .split("\n")
-            .map((line) => (
-              <p>{line}</p>
-            ))}
-        </div>
-
-        <div>
-          <img src={"/character_img/" + character_name[0] + "전투스킬.webp"} />
-        </div>
-        <div>
-          <h3>원소 전투</h3>
-          <SkillContents skill_detail={character_detail.skills.normal_skill} />
-        </div>
-
-        <div>
-          <img src={"/character_img/" + character_name[0] + "폭발스킬.webp"} />
-        </div>
-        <div>
-          <h3>원소 폭발</h3>
-          <SkillContents
-            skill_detail={character_detail.skills.ultimate_skill}
-          />
-        </div>
-      </div>
+      <Details.Skills
+        character_name={character_name[0]}
+        character_skill={character_detail.skills}
+      />
     </div>
-  );
-}
-
-export interface character_skills {
-  skill_detail: {
-    name: string;
-    content: string;
-  };
-}
-function SkillContents({ skill_detail }: character_skills) {
-  return (
-    <>
-      <h4>{skill_detail.name}</h4>
-      {skill_detail.content
-        .split("\n")
-        .slice(0, -1)
-        .map((line) => (
-          <p>{line}</p>
-        ))}
-      <p className="profile-describtion">
-        {skill_detail.content.split("\n").slice(-1)}
-      </p>
-    </>
   );
 }
 
