@@ -67,6 +67,24 @@ export interface detail_info {
         name: string;
         content: string;
       };
+      break_skills: {
+        first: {
+          name: string;
+          content: string;
+        };
+        fourth: {
+          name: string;
+          content: string;
+        };
+      };
+      inherence_skills: {
+        name: string;
+        content: string;
+      }[];
+      constellation: {
+        name: string;
+        content: string;
+      }[];
     };
   };
 }

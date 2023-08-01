@@ -62,10 +62,10 @@ const characters_detail = [
             "'여명'이 제공하는 불 원소 부여 지속시간이 4초 증가한다. 추가로 효과가 지속되는 동안 다이루크는 불 원소 피해 보너스를 20% 획득한다.",
         },
       },
-      inherence_skills: {
+      inherence_skills: [{
         name: "새벽의 전통",
         content: "양손검 무기 단조 시 소모한 광석을 15% 반환한다.",
-      },
+      }],
       constellation: [
         {
           name: "죄악 징벌",
