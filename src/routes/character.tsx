@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { characters } from "../datas/combinations";
 
 import characters_detail from "../datas/characters_detail";
@@ -121,6 +121,16 @@ function BasicInformation({ character_name, character_detail }: detail_info) {
         character_name={character_name[0]}
         character_skill={character_detail.skills}
       />
+
+      <ToMain />
+    </div>
+  );
+}
+
+function ToMain() {
+  return (
+    <div className="to-top" onClick={() => (location.href = "/")}>
+      Main
     </div>
   );
 }
