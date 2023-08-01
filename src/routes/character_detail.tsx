@@ -477,11 +477,11 @@ export interface character_skills {
     inherence_skills: {
       name: string;
       content: string;
-    } /*
+    }[];
     constellation: {
       name: string;
       content: string;
-    }[];*/;
+    }[];
   };
 }
 function Skills({ character_name, character_skill }: character_skills) {
@@ -538,25 +538,33 @@ function Skills({ character_name, character_skill }: character_skills) {
 
       <h4>고유 특성</h4>
       <div className="character-skills">
-        <div>
-          <img src={"/character_img/" + character_name + "고유특성.webp"} />
-        </div>
-        <div>
-          <SkillContent skill_detail={character_skill.inherence_skills} />
-        </div>
+        {character_skill.inherence_skills.map((constel) =>
+          character_skill.inherence_skills.length === 1 ? (
+            <SkillInherence
+              character_name={character_name}
+              id={""}
+              skill_detail={constel}
+            />
+          ) : (
+            <SkillInherence
+              character_name={character_name}
+              id={character_skill.inherence_skills.indexOf(constel)}
+              skill_detail={constel}
+            />
+          )
+        )}
       </div>
-      {/*
+
       <h4>운명의 자리</h4>
       <div className="character-skills">
         {character_skill.constellation.map((constel) => (
           <SkillConstellation
             character_name={character_name}
-            id={character_skill.constellation.indexOf(constel)}
+            id={character_skill.constellation.indexOf(constel) + 1}
             skill_detail={constel}
           />
         ))}
       </div>
-        */}
     </>
   );
 }
@@ -592,10 +600,10 @@ function SkillContent({ skill_detail }: skills_detail) {
     </>
   );
 }
-/*
-export interface constellation_detail {
+
+export interface multiskill_detail {
   character_name: string;
-  id: number;
+  id: number | string;
   skill_detail: {
     name: string;
     content: string;
@@ -605,14 +613,12 @@ function SkillConstellation({
   character_name,
   id,
   skill_detail,
-}: constellation_detail) {
+}: multiskill_detail) {
   return (
     <>
       <div>
         <img
-          src={
-            "/character_img/" + character_name + "별자리" + (id + 1) + ".webp"
-          }
+          src={"/character_img/" + character_name + "별자리" + id + ".webp"}
         />
       </div>
       <div>
@@ -621,5 +627,23 @@ function SkillConstellation({
     </>
   );
 }
-*/
+function SkillInherence({
+  character_name,
+  id,
+  skill_detail,
+}: multiskill_detail) {
+  return (
+    <>
+      <div>
+        <img
+          src={"/character_img/" + character_name + "고유특성" + id + ".webp"}
+        />
+      </div>
+      <div>
+        <SkillContent skill_detail={skill_detail} />
+      </div>
+    </>
+  );
+}
+
 export { CharacterProfile, SpecialCook, Materials, Skills };
