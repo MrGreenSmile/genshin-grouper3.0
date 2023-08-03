@@ -190,13 +190,19 @@ input[type="checkbox"]:checked + label {
   position: fixed;
   bottom: 40px;
   right: 10px;
+  width: 50px;
 
+  padding: 5px;
   background-color: rgb(105, 105, 255);
+  border: 2px solid white;
   border-radius: 10px;
   color: white;
   font-weight: bold;
-  padding: 5px;
+  text-align: center;
   cursor: pointer;
+}
+.second-top {
+  right: 75px;
 }
 
 .combination-container {
