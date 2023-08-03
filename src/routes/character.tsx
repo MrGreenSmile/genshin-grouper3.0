@@ -86,6 +86,9 @@ export interface detail_info {
         content: string;
       }[];
     };
+    tips: {
+      summary: string;
+    };
   };
 }
 
@@ -122,6 +125,13 @@ function BasicInformation({ character_name, character_detail }: detail_info) {
         character_skill={character_detail.skills}
       />
 
+      <h2>팁</h2>
+      <h3>요령</h3>
+      {character_detail.tips.summary.split("\n").map((line) => (
+        <p>{line}</p>
+      ))}
+
+      <ToTop />
       <ToMain />
     </div>
   );
@@ -129,8 +139,15 @@ function BasicInformation({ character_name, character_detail }: detail_info) {
 
 function ToMain() {
   return (
-    <div className="to-top" onClick={() => (location.href = "/")}>
+    <div className="to-top second-top" onClick={() => (location.href = "/")}>
       Main
+    </div>
+  );
+}
+function ToTop() {
+  return (
+    <div className="to-top" onClick={() => (location.href = "#top")}>
+      Top
     </div>
   );
 }
