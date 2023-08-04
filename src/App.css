@@ -359,6 +359,28 @@ input[type="checkbox"]:checked + label {
 .character-skills img {
   width: 100px;
 }
+.character-weapons {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+
+  background-color: skyblue;
+}
+.character-weapons div {
+  border: 1px solid white;
+  min-height: 100px;
+  color: white;
+}
+.character-weapons div:nth-child(2n-1) {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+}
+.character-weapons div:nth-child(2n) {
+  padding: 10px;
+}
+.character-weapons img {
+  width: 150px;
+}
 
 @media screen and (max-width: 850px) {
   .materials-imgs > div > img {
