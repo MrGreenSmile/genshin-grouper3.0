@@ -92,6 +92,10 @@ export interface detail_info {
         name: string;
         content: string;
       }[];
+      artifacts: {
+        name: Array<string>;
+        content: string;
+      }[];
     };
   };
 }
@@ -141,6 +145,9 @@ function BasicInformation({ character_name, character_detail }: detail_info) {
           <Details.Weapons weapon={weapon} />
         ))}
       </div>
+
+      <h3>성유물</h3>
+      <Details.Artifacts artifacts={character_detail.tips.artifacts} />
 
       <ToTop />
       <ToMain />
