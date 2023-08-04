@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { allWeapon } from "../datas/weapons";
 
 export interface profile {
   character_names: Array<string>;
@@ -646,4 +647,48 @@ function SkillInherence({
   );
 }
 
-export { CharacterProfile, SpecialCook, Materials, Skills };
+export interface character_weapons {
+  weapon: {
+    name: string;
+    content: string;
+  };
+}
+function Weapons({ weapon }: character_weapons) {
+  const [content_veiw, content_veiwer] = useState(false);
+  const weapon_content = allWeapon.filter(
+    (weapon_list) => weapon_list.name === weapon.name
+  )[0];
+
+  return (
+    <>
+      <div
+        onMouseEnter={() => content_veiwer(!content_veiw)}
+        onMouseLeave={() => content_veiwer(!content_veiw)}
+      >
+        <img src={"/weapons/" + weapon.name + ".webp"} />
+      </div>
+      {content_veiw ? (
+        <div>
+          <h4>{weapon_content.name}</h4>
+          <p>기초 공격력 : {weapon_content.atk}</p>
+          <p>추가 능력치 : {weapon_content.subStat}</p>
+          <p>추가 효과 : {weapon_content.subEffect.title}</p>
+          <p>
+            {weapon_content.subEffect.content.split("\n").map((line) => (
+              <p>{line}</p>
+            ))}
+          </p>
+        </div>
+      ) : (
+        <div>
+          <h4>{weapon.name}</h4>
+          {weapon.content.split("\n").map((line) => (
+            <p>{line}</p>
+          ))}
+        </div>
+      )}
+    </>
+  );
+}
+
+export { CharacterProfile, SpecialCook, Materials, Skills, Weapons };

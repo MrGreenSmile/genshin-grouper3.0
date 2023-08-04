@@ -88,6 +88,10 @@ export interface detail_info {
     };
     tips: {
       summary: string;
+      weapons: {
+        name: string;
+        content: string;
+      }[];
     };
   };
 }
@@ -130,6 +134,13 @@ function BasicInformation({ character_name, character_detail }: detail_info) {
       {character_detail.tips.summary.split("\n").map((line) => (
         <p>{line}</p>
       ))}
+
+      <h3>무기</h3>
+      <div className="character-weapons">
+        {character_detail.tips.weapons.map((weapon) => (
+          <Details.Weapons weapon={weapon} />
+        ))}
+      </div>
 
       <ToTop />
       <ToMain />
