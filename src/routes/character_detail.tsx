@@ -691,4 +691,48 @@ function Weapons({ weapon }: character_weapons) {
   );
 }
 
-export { CharacterProfile, SpecialCook, Materials, Skills, Weapons };
+export interface character_artifacts {
+  artifacts: {
+    name: Array<string>;
+    content: string;
+  }[];
+}
+function Artifacts({ artifacts }: character_artifacts) {
+  return (
+    <div className="character-artifacts">
+      {artifacts.map((artifact) =>
+        artifact.name.length === 1 ? (
+          <>
+            <div>
+              <img src={"/artifacts/" + artifact.name + ".webp"} />
+            </div>
+            <div>
+              <h4>{artifact.name}(4set)</h4>
+              {artifact.content.split("\n").map((line) => (
+                <p>{line}</p>
+              ))}
+            </div>
+          </>
+        ) : (
+          <>
+            <div className="artifacts-multi">
+              {artifact.name.map((name) => (
+                <img src={"/artifacts/" + name + ".webp"} />
+              ))}
+            </div>
+            <div>
+              <h4>
+                {artifact.name[0]}(2set) - {artifact.name[1]}(2set)
+              </h4>
+              {artifact.content.split("\n").map((line) => (
+                <p>{line}</p>
+              ))}
+            </div>
+          </>
+        )
+      )}
+    </div>
+  );
+}
+
+export { CharacterProfile, SpecialCook, Materials, Skills, Weapons, Artifacts };
