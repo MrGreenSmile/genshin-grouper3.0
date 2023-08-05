@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { allWeapon } from "../datas/weapons";
+import { allWeapon } from "../datas/equipments";
 
 export interface profile {
   character_names: Array<string>;
