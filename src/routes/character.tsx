@@ -147,7 +147,11 @@ function BasicInformation({ character_name, character_detail }: detail_info) {
       </div>
 
       <h3>성유물</h3>
-      <Details.Artifacts artifacts={character_detail.tips.artifacts} />
+      <div className="character-artifacts">
+        {character_detail.tips.artifacts.map((artifact) => (
+          <Details.Artifacts artifacts={artifact} />
+        ))}
+      </div>
 
       <ToTop />
       <ToMain />
