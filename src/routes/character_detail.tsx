@@ -719,7 +719,6 @@ function Artifacts({ artifacts }: character_artifacts) {
         )}
       </div>
       <div>
-        {/*allArtifacts*/}
         {content_veiw ? (
           artifacts.name.length === 1 ? (
             <ArtifactContent artifact={artifact[0]} />

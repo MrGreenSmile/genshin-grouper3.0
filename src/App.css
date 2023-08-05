@@ -266,6 +266,9 @@ input[type="checkbox"]:checked + label {
   background-color: skyblue;
   color: white;
 }
+.character-profile-cook .left {
+  text-align: center;
+}
 .character-profile-cook .right {
   padding: 10px;
   border: 1px solid white;
