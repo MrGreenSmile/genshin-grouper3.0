@@ -101,9 +101,17 @@ export interface detail_info {
         content: string;
       }[];
       artifacts: {
-        name: Array<string>;
-        content: string;
-      }[];
+        recommand: {
+          watch: string;
+          grail: string;
+          crown: string;
+          sub_effect: string;
+        };
+        artifact_list: {
+          name: Array<string>;
+          content: string;
+        }[];
+      };
     };
   };
 }
@@ -159,8 +167,11 @@ function TipInformation({ character_detail }: detail_info) {
       </div>
 
       <h3>성유물</h3>
+      <Details.ArtifactAttribute
+        recommand={character_detail.tips.artifacts.recommand}
+      />
       <div className="character-artifacts">
-        {character_detail.tips.artifacts.map((artifact) => (
+        {character_detail.tips.artifacts.artifact_list.map((artifact) => (
           <Details.Artifacts artifacts={artifact} />
         ))}
       </div>
