@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { allWeapon } from "../datas/equipments";
+import { allWeapon, allArtifacts } from "../datas/equipments";
 
 export interface profile {
   character_names: Array<string>;
@@ -695,43 +695,72 @@ export interface character_artifacts {
   artifacts: {
     name: Array<string>;
     content: string;
-  }[];
+  };
 }
 function Artifacts({ artifacts }: character_artifacts) {
+  const [content_veiw, content_veiwer] = useState(false);
+  const artifact = allArtifacts.filter(
+    (art) => artifacts.name[0] === art.name || artifacts.name[1] === art.name
+  );
+
   return (
-    <div className="character-artifacts">
-      {artifacts.map((artifact) =>
-        artifact.name.length === 1 ? (
+    <>
+      <div
+        className={artifacts.name.length === 1 ? "" : "artifacts-multi"}
+        onMouseEnter={() => content_veiwer(!content_veiw)}
+        onMouseLeave={() => content_veiwer(!content_veiw)}
+      >
+        {artifacts.name.length === 1 ? (
+          <img src={"/artifacts/" + artifacts.name[0] + ".webp"} />
+        ) : (
+          artifacts.name.map((name) => (
+            <img src={"/artifacts/" + name + ".webp"} />
+          ))
+        )}
+      </div>
+      <div>
+        {/*allArtifacts*/}
+        {content_veiw ? (
+          artifacts.name.length === 1 ? (
+            <ArtifactContent artifact={artifact[0]} />
+          ) : (
+            artifact.map((art) => <ArtifactContent artifact={art} />)
+          )
+        ) : artifacts.name.length === 1 ? (
           <>
-            <div>
-              <img src={"/artifacts/" + artifact.name + ".webp"} />
-            </div>
-            <div>
-              <h4>{artifact.name}(4set)</h4>
-              {artifact.content.split("\n").map((line) => (
-                <p>{line}</p>
-              ))}
-            </div>
+            <h4>{artifacts.name[0]}(4set)</h4>
           </>
         ) : (
           <>
-            <div className="artifacts-multi">
-              {artifact.name.map((name) => (
-                <img src={"/artifacts/" + name + ".webp"} />
-              ))}
-            </div>
-            <div>
-              <h4>
-                {artifact.name[0]}(2set) - {artifact.name[1]}(2set)
-              </h4>
-              {artifact.content.split("\n").map((line) => (
-                <p>{line}</p>
-              ))}
-            </div>
+            <h4>
+              {artifacts.name[0]}(2set) - {artifacts.name[1]}(2set)
+            </h4>
           </>
-        )
-      )}
-    </div>
+        )}
+        {content_veiw
+          ? null
+          : artifacts.content.split("\n").map((line) => <p>{line}</p>)}
+      </div>
+    </>
+  );
+}
+export interface artifact_content {
+  artifact: {
+    name: string;
+    set2: string;
+    set4: string;
+  };
+}
+function ArtifactContent({ artifact }: artifact_content) {
+  return (
+    <>
+      <h4>{artifact.name}</h4>
+      <p>2셋 효과 : {artifact.set2}</p>
+      <p>4셋 효과 : </p>
+      {artifact.set4.split("\n").map((line) => (
+        <p>{line}</p>
+      ))}
+    </>
   );
 }
 
