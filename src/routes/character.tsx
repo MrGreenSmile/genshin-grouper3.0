@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { characters } from "../datas/combinations";
 
 import characters_detail from "../datas/characters_detail";
@@ -22,11 +22,19 @@ function CharacterDetail() {
           className="character-detail-card"
           src={"/character_card/" + character_name[1] + ".webp"}
         />
+
         <BasicInformation
           character_name={character_name}
           character_detail={character_detail}
         />
+        <TipInformation
+          character_name={character_name}
+          character_detail={character_detail}
+        />
       </div>
+
+      <ToTop />
+      <ToMain />
     </div>
   );
 }
@@ -93,18 +101,25 @@ export interface detail_info {
         content: string;
       }[];
       artifacts: {
-        name: Array<string>;
-        content: string;
-      }[];
+        recommand: {
+          watch: string;
+          grail: string;
+          crown: string;
+          sub_effect: string;
+        };
+        artifact_list: {
+          name: Array<string>;
+          content: string;
+        }[];
+      };
     };
   };
 }
 
 function BasicInformation({ character_name, character_detail }: detail_info) {
   return (
-    <div>
+    <>
       <h2>기본 정보</h2>
-
       <div className="character-summary">
         {character_detail.summary.split("\n").map((summ) => (
           <p key="">{summ}</p>
@@ -132,7 +147,12 @@ function BasicInformation({ character_name, character_detail }: detail_info) {
         character_name={character_name[0]}
         character_skill={character_detail.skills}
       />
-
+    </>
+  );
+}
+function TipInformation({ character_detail }: detail_info) {
+  return (
+    <>
       <h2>팁</h2>
       <h3>요령</h3>
       {character_detail.tips.summary.split("\n").map((line) => (
@@ -147,15 +167,15 @@ function BasicInformation({ character_name, character_detail }: detail_info) {
       </div>
 
       <h3>성유물</h3>
+      <Details.ArtifactAttribute
+        recommand={character_detail.tips.artifacts.recommand}
+      />
       <div className="character-artifacts">
-        {character_detail.tips.artifacts.map((artifact) => (
+        {character_detail.tips.artifacts.artifact_list.map((artifact) => (
           <Details.Artifacts artifacts={artifact} />
         ))}
       </div>
-
-      <ToTop />
-      <ToMain />
-    </div>
+    </>
   );
 }
 

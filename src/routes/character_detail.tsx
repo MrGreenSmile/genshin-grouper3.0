@@ -691,6 +691,35 @@ function Weapons({ weapon }: character_weapons) {
   );
 }
 
+export interface artifact_attribute {
+  recommand: {
+    watch: string;
+    grail: string;
+    crown: string;
+    sub_effect: string;
+  };
+}
+function ArtifactAttribute({ recommand }: artifact_attribute) {
+  return (
+    <div className="character-artifacts-attribute">
+      <div className="left">
+        <div className="title">주옵션</div>
+        <div className="left-content">
+          <div>시계</div>
+          <div>{recommand.watch}</div>
+          <div>성배</div>
+          <div>{recommand.grail}</div>
+          <div>왕관</div>
+          <div>{recommand.crown}</div>
+        </div>
+      </div>
+      <div className="right">
+        <div className="title">부옵션</div>
+        <div className="right-content">{recommand.sub_effect}</div>
+      </div>
+    </div>
+  );
+}
 export interface character_artifacts {
   artifacts: {
     name: Array<string>;
@@ -763,4 +792,12 @@ function ArtifactContent({ artifact }: artifact_content) {
   );
 }
 
-export { CharacterProfile, SpecialCook, Materials, Skills, Weapons, Artifacts };
+export {
+  CharacterProfile,
+  SpecialCook,
+  Materials,
+  Skills,
+  Weapons,
+  Artifacts,
+  ArtifactAttribute,
+};

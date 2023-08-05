@@ -384,6 +384,50 @@ input[type="checkbox"]:checked + label {
 .character-weapons img {
   width: 150px;
 }
+
+.character-artifacts-attribute {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  background-color: skyblue;
+  color: white;
+}
+.character-artifacts-attribute div {
+  border: 1px solid white;
+}
+.character-artifacts-attribute .title {
+  text-align: center;
+  line-height: 30px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.character-artifacts-attribute .left {
+  border: none;
+  display: grid;
+  grid-template-rows: 30px 75px;
+}
+.character-artifacts-attribute .left-content {
+  border: none;
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  grid-template-rows: repeat(3, 25px);
+}
+.character-artifacts-attribute .left-content div {
+  padding-left: 5px;
+}
+.character-artifacts-attribute .right {
+  border: none;
+  display: grid;
+  grid-template-rows: 30px 75px;
+}
+.character-artifacts-attribute .right-content {
+  display: flex;
+  align-items: center;
+
+  padding-left: 5px;
+  word-break: keep-all;
+}
+
 .character-artifacts {
   display: grid;
   grid-template-columns: 200px 1fr;
@@ -440,6 +484,7 @@ input[type="checkbox"]:checked + label {
     grid-template-columns: auto;
     grid-template-rows: auto auto;
   }
+
   .character-materials {
     display: grid;
     grid-template-columns: 1fr;
@@ -467,6 +512,12 @@ input[type="checkbox"]:checked + label {
   }
   .character-weapons img {
     width: 110px;
+  }
+
+  .character-artifacts-attribute {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
   }
   .character-artifacts {
     display: grid;
