@@ -112,6 +112,10 @@ export interface detail_info {
           content: string;
         }[];
       };
+      partners: {
+        name: Array<string>;
+        content: string;
+      }[];
     };
   };
 }
@@ -175,6 +179,11 @@ function TipInformation({ character_detail }: detail_info) {
           <Details.Artifacts artifacts={artifact} />
         ))}
       </div>
+
+      <h3>파트너</h3>
+      {character_detail.tips.partners.map((partner) => (
+        <Details.Partners partner={partner} />
+      ))}
     </>
   );
 }
