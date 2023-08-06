@@ -792,6 +792,29 @@ function ArtifactContent({ artifact }: artifact_content) {
   );
 }
 
+export interface character_partner {
+  partner: {
+    name: Array<string>;
+    content: string;
+  };
+}
+function Partners({ partner }: character_partner) {
+  return (
+    <div>
+      <div className="partner-images">
+        {partner.name.map((name) => (
+          <img src={"/character_card/" + name + ".webp"} />
+        ))}
+      </div>
+      <div>
+        {partner.content.split("\n").map((line) => (
+          <p>{line}</p>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export {
   CharacterProfile,
   SpecialCook,
@@ -800,4 +823,5 @@ export {
   Weapons,
   Artifacts,
   ArtifactAttribute,
+  Partners,
 };
