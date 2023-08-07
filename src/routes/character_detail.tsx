@@ -100,7 +100,7 @@ function SpecialCook({ special_cook }: special_cook) {
             .split("\n")
             .slice(0, -1)
             .map((line) => (
-              <p>{line}</p>
+              <p key="">{line}</p>
             ))}
           <p className="profile-describtion">
             {special_cook.content.split("\n").slice(-1)}
@@ -411,11 +411,11 @@ function Materials({ penetration_materials, skill_materials }: materials) {
           <div className="materials-imgs">
             {penetration_materials.map((metarial) =>
               Array.isArray(metarial) ? (
-                <div>
+                <div key="">
                   <img src={"/materials/" + metarial.slice(-1) + ".webp"} />
                 </div>
               ) : (
-                <div>
+                <div key="">
                   <img src={"/materials/" + metarial + ".webp"} />
                 </div>
               )
@@ -430,11 +430,11 @@ function Materials({ penetration_materials, skill_materials }: materials) {
           <div className="materials-imgs">
             {skill_materials.map((metarial) =>
               Array.isArray(metarial) ? (
-                <div>
+                <div key="">
                   <img src={"/materials/" + metarial.slice(-1) + ".webp"} />
                 </div>
               ) : (
-                <div>
+                <div key="">
                   <img src={"/materials/" + metarial + ".webp"} />
                 </div>
               )
@@ -460,10 +460,20 @@ export interface character_skills {
     normal_skill: {
       name: string;
       content: string;
+      sub_content: {
+        name: string;
+        content: string;
+      }[];
+      comment: string;
     };
     ultimate_skill: {
       name: string;
       content: string;
+      sub_content: {
+        name: string;
+        content: string;
+      }[];
+      comment: string;
     };
     break_skills: {
       first: {
@@ -497,7 +507,7 @@ function Skills({ character_name, character_skill }: character_skills) {
           <h3>기본 공격</h3>
           <h4>{character_skill.normal_attack.name}</h4>
           {character_skill.normal_attack.content.split("\n").map((line) => (
-            <p>{line}</p>
+            <p key="">{line}</p>
           ))}
         </div>
 
@@ -545,12 +555,14 @@ function Skills({ character_name, character_skill }: character_skills) {
               character_name={character_name}
               id={""}
               skill_detail={constel}
+              key=""
             />
           ) : (
             <SkillInherence
               character_name={character_name}
               id={character_skill.inherence_skills.indexOf(constel)}
               skill_detail={constel}
+              key=""
             />
           )
         )}
@@ -563,6 +575,7 @@ function Skills({ character_name, character_skill }: character_skills) {
             character_name={character_name}
             id={character_skill.constellation.indexOf(constel) + 1}
             skill_detail={constel}
+            key=""
           />
         ))}
       </div>
@@ -573,30 +586,46 @@ export interface skills_detail {
   skill_detail: {
     name: string;
     content: string;
+    sub_content: {
+      name: string;
+      content: string;
+    }[];
+    comment: string;
+  };
+}
+export interface skill_detail {
+  skill_detail: {
+    name: string;
+    content: string;
   };
 }
 function SkillContents({ skill_detail }: skills_detail) {
   return (
     <>
       <h4>{skill_detail.name}</h4>
-      {skill_detail.content
-        .split("\n")
-        .slice(0, -1)
-        .map((line) => (
-          <p>{line}</p>
-        ))}
-      <p className="profile-describtion">
-        {skill_detail.content.split("\n").slice(-1)}
-      </p>
+      {skill_detail.content.split("\n").map((line) => (
+        <p key="">{line}</p>
+      ))}
+      {skill_detail.sub_content.length >= 1
+        ? skill_detail.sub_content.map((content) => (
+            <>
+              <h4>{content.name}</h4>
+              {content.content.split("\n").map((line) => (
+                <p key="">{line}</p>
+              ))}
+            </>
+          ))
+        : null}
+      <p className="profile-describtion">{skill_detail.comment}</p>
     </>
   );
 }
-function SkillContent({ skill_detail }: skills_detail) {
+function SkillContent({ skill_detail }: skill_detail) {
   return (
     <>
       <h4>{skill_detail.name}</h4>
       {skill_detail.content.split("\n").map((line) => (
-        <p>{line}</p>
+        <p key="">{line}</p>
       ))}
     </>
   );
@@ -675,7 +704,7 @@ function Weapons({ weapon }: character_weapons) {
           <p>추가 효과 : {weapon_content.subEffect.title}</p>
           <p>
             {weapon_content.subEffect.content.split("\n").map((line) => (
-              <p>{line}</p>
+              <p key="">{line}</p>
             ))}
           </p>
         </div>
@@ -683,7 +712,7 @@ function Weapons({ weapon }: character_weapons) {
         <div>
           <h4>{weapon.name}</h4>
           {weapon.content.split("\n").map((line) => (
-            <p>{line}</p>
+            <p key="">{line}</p>
           ))}
         </div>
       )}
@@ -743,7 +772,7 @@ function Artifacts({ artifacts }: character_artifacts) {
           <img src={"/artifacts/" + artifacts.name[0] + ".webp"} />
         ) : (
           artifacts.name.map((name) => (
-            <img src={"/artifacts/" + name + ".webp"} />
+            <img src={"/artifacts/" + name + ".webp"} key="" />
           ))
         )}
       </div>
@@ -752,7 +781,7 @@ function Artifacts({ artifacts }: character_artifacts) {
           artifacts.name.length === 1 ? (
             <ArtifactContent artifact={artifact[0]} />
           ) : (
-            artifact.map((art) => <ArtifactContent artifact={art} />)
+            artifact.map((art) => <ArtifactContent artifact={art} key="" />)
           )
         ) : artifacts.name.length === 1 ? (
           <>
@@ -767,7 +796,7 @@ function Artifacts({ artifacts }: character_artifacts) {
         )}
         {content_veiw
           ? null
-          : artifacts.content.split("\n").map((line) => <p>{line}</p>)}
+          : artifacts.content.split("\n").map((line) => <p key="">{line}</p>)}
       </div>
     </>
   );
@@ -786,7 +815,7 @@ function ArtifactContent({ artifact }: artifact_content) {
       <p>2셋 효과 : {artifact.set2}</p>
       <p>4셋 효과 : </p>
       {artifact.set4.split("\n").map((line) => (
-        <p>{line}</p>
+        <p key="">{line}</p>
       ))}
     </>
   );
@@ -803,12 +832,12 @@ function Partners({ partner }: character_partner) {
     <div>
       <div className="partner-images">
         {partner.name.map((name) => (
-          <img src={"/character_card/" + name + ".webp"} />
+          <img src={"/character_card/" + name + ".webp"} key="" />
         ))}
       </div>
       <div>
         {partner.content.split("\n").map((line) => (
-          <p>{line}</p>
+          <p key="">{line}</p>
         ))}
       </div>
     </div>
