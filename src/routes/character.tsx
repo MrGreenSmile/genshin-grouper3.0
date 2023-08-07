@@ -70,10 +70,20 @@ export interface detail_info {
       normal_skill: {
         name: string;
         content: string;
+        sub_content: {
+          name: string;
+          content: string;
+        }[];
+        comment: string;
       };
       ultimate_skill: {
         name: string;
         content: string;
+        sub_content: {
+          name: string;
+          content: string;
+        }[];
+        comment: string;
       };
       break_skills: {
         first: {

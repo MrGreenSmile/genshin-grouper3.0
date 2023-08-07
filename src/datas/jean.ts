@@ -117,7 +117,7 @@ const jean_detail = {
     ],
   },
   tips: {
-    summary: "",
+    summary: "ㅇㅇ",
     weapons: [
       {
         name: "늑대의 말로",

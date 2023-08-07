@@ -593,6 +593,12 @@ export interface skills_detail {
     comment: string;
   };
 }
+export interface skill_detail {
+  skill_detail: {
+    name: string;
+    content: string;
+  };
+}
 function SkillContents({ skill_detail }: skills_detail) {
   return (
     <>
@@ -614,7 +620,7 @@ function SkillContents({ skill_detail }: skills_detail) {
     </>
   );
 }
-function SkillContent({ skill_detail }: skills_detail) {
+function SkillContent({ skill_detail }: skill_detail) {
   return (
     <>
       <h4>{skill_detail.name}</h4>
