@@ -160,13 +160,13 @@ function TipInformation({ character_detail }: detail_info) {
       <h2>팁</h2>
       <h3>요령</h3>
       {character_detail.tips.summary.split("\n").map((line) => (
-        <p>{line}</p>
+        <p key="">{line}</p>
       ))}
 
       <h3>무기</h3>
       <div className="character-weapons">
         {character_detail.tips.weapons.map((weapon) => (
-          <Details.Weapons weapon={weapon} />
+          <Details.Weapons weapon={weapon} key="" />
         ))}
       </div>
 
@@ -176,13 +176,13 @@ function TipInformation({ character_detail }: detail_info) {
       />
       <div className="character-artifacts">
         {character_detail.tips.artifacts.artifact_list.map((artifact) => (
-          <Details.Artifacts artifacts={artifact} />
+          <Details.Artifacts artifacts={artifact} key="" />
         ))}
       </div>
 
       <h3>파트너</h3>
       {character_detail.tips.partners.map((partner) => (
-        <Details.Partners partner={partner} />
+        <Details.Partners partner={partner} key="" />
       ))}
     </>
   );
