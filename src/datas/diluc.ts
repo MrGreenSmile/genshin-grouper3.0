@@ -12,7 +12,7 @@ const diluc_detail = {
     constellation: "밤올빼미",
     birthday: "4/30",
     union: "몬드 - 다운 와이너리",
-    actor: ["최승훈", "小野賢章(오노 켄쇼)", "Sean Chiplock", "马洋"],
+    actor: ["최승훈", "小野 賢章(오노 켄쇼)", "Sean Chiplock", "马洋"],
     cook: {
       name: "몬드의 과거",
       content:
