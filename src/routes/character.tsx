@@ -76,6 +76,11 @@ export interface detail_info {
         }[];
         comment: string;
       };
+      dash_skill: {
+        name: string;
+        content: string;
+        comment: string;
+      };
       ultimate_skill: {
         name: string;
         content: string;

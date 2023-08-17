@@ -47,6 +47,11 @@ const diluc_detail = {
       comment:
         "각각 다이루크가 주관하고 있는 정의, 용기, 그리고 책임감을 상징한다.",
     },
+    dash_skill: {
+      name: "",
+      content: "",
+      comment: "",
+    },
     ultimate_skill: {
       name: "여명",
       content:
