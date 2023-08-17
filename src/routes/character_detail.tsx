@@ -466,6 +466,11 @@ export interface character_skills {
       }[];
       comment: string;
     };
+    dash_skill: {
+      name: string;
+      content: string;
+      comment: string;
+    };
     ultimate_skill: {
       name: string;
       content: string;
@@ -518,6 +523,24 @@ function Skills({ character_name, character_skill }: character_skills) {
           <h3>원소 전투</h3>
           <SkillContents skill_detail={character_skill.normal_skill} />
         </div>
+
+        {character_skill.dash_skill.name == "" ? null : (
+          <>
+            <div>
+              <img src={"/character_img/" + character_name + "대시스킬.webp"} />
+            </div>
+            <div>
+              <h3>대시 스킬</h3>
+              <h4>{character_skill.dash_skill.name}</h4>
+              {character_skill.dash_skill.content.split("\n").map((line) => (
+                <p key="">{line}</p>
+              ))}
+              <p className="profile-describtion">
+                {character_skill.dash_skill.comment}
+              </p>
+            </div>
+          </>
+        )}
 
         <div>
           <img src={"/character_img/" + character_name + "폭발스킬.webp"} />
