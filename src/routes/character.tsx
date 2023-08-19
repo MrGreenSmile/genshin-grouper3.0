@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { characters } from "../datas/combinations";
 
+import { SentencesEmp } from "../components/grouper";
 import characters_detail from "../datas/characters_detail";
 import * as Details from "./character_detail";
 
@@ -141,7 +142,7 @@ function BasicInformation({ character_name, character_detail }: detail_info) {
       <h2>기본 정보</h2>
       <div className="character-summary">
         {character_detail.summary.split("\n").map((summ) => (
-          <p key="">{summ}</p>
+          <SentencesEmp key="" line={summ} />
         ))}
       </div>
 
@@ -169,13 +170,14 @@ function BasicInformation({ character_name, character_detail }: detail_info) {
     </>
   );
 }
+
 function TipInformation({ character_detail }: detail_info) {
   return (
     <>
       <h2>팁</h2>
       <h3>요령</h3>
       {character_detail.tips.summary.split("\n").map((line) => (
-        <p key="">{line}</p>
+        <SentencesEmp key="" line={line} />
       ))}
 
       <h3>무기</h3>

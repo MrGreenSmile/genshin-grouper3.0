@@ -231,6 +231,9 @@ input[type="checkbox"]:checked + label {
   font-weight: bold;
   font-style: oblique;
 }
+.emphasis {
+  font-weight: bold;
+}
 .character-detail-card {
   width: 120px;
 }
