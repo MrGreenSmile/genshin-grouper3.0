@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { allWeapon, allArtifacts } from "../datas/equipments";
+import { SentencesEmp } from "../components/grouper";
 
 export interface profile {
   character_names: Array<string>;
@@ -512,7 +513,7 @@ function Skills({ character_name, character_skill }: character_skills) {
           <h3>기본 공격</h3>
           <h4>{character_skill.normal_attack.name}</h4>
           {character_skill.normal_attack.content.split("\n").map((line) => (
-            <p key="">{line}</p>
+            <SentencesEmp key="" line={line} />
           ))}
         </div>
 
@@ -533,7 +534,7 @@ function Skills({ character_name, character_skill }: character_skills) {
               <h3>대시 스킬</h3>
               <h4>{character_skill.dash_skill.name}</h4>
               {character_skill.dash_skill.content.split("\n").map((line) => (
-                <p key="">{line}</p>
+                <SentencesEmp key="" line={line} />
               ))}
               <p className="profile-describtion">
                 {character_skill.dash_skill.comment}
@@ -627,14 +628,14 @@ function SkillContents({ skill_detail }: skills_detail) {
     <>
       <h4>{skill_detail.name}</h4>
       {skill_detail.content.split("\n").map((line) => (
-        <p key="">{line}</p>
+        <SentencesEmp key="" line={line} />
       ))}
       {skill_detail.sub_content.length >= 1
         ? skill_detail.sub_content.map((content) => (
             <>
               <h4>{content.name}</h4>
               {content.content.split("\n").map((line) => (
-                <p key="">{line}</p>
+                <SentencesEmp key="" line={line} />
               ))}
             </>
           ))
@@ -648,7 +649,7 @@ function SkillContent({ skill_detail }: skill_detail) {
     <>
       <h4>{skill_detail.name}</h4>
       {skill_detail.content.split("\n").map((line) => (
-        <p key="">{line}</p>
+        <SentencesEmp key="" line={line} />
       ))}
     </>
   );
@@ -727,7 +728,7 @@ function Weapons({ weapon }: character_weapons) {
           <p>추가 효과 : {weapon_content.subEffect.title}</p>
           <p>
             {weapon_content.subEffect.content.split("\n").map((line) => (
-              <p key="">{line}</p>
+              <SentencesEmp key="" line={line} />
             ))}
           </p>
         </div>
@@ -735,7 +736,7 @@ function Weapons({ weapon }: character_weapons) {
         <div>
           <h4>{weapon.name}</h4>
           {weapon.content.split("\n").map((line) => (
-            <p key="">{line}</p>
+            <SentencesEmp key="" line={line} />
           ))}
         </div>
       )}
@@ -819,7 +820,9 @@ function Artifacts({ artifacts }: character_artifacts) {
         )}
         {content_veiw
           ? null
-          : artifacts.content.split("\n").map((line) => <p key="">{line}</p>)}
+          : artifacts.content
+              .split("\n")
+              .map((line) => <SentencesEmp key="" line={line} />)}
       </div>
     </>
   );
@@ -860,7 +863,7 @@ function Partners({ partner }: character_partner) {
       </div>
       <div>
         {partner.content.split("\n").map((line) => (
-          <p key="">{line}</p>
+          <SentencesEmp key="" line={line} />
         ))}
       </div>
     </div>

@@ -2,6 +2,30 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { characters, combinations } from "../datas/combinations";
 
+export interface emphasizing {
+  line: string;
+}
+function SentencesEmp({ line }: emphasizing) {
+  return (
+    <p key="">
+      {line.includes("<em>")
+        ? line.split("<em>").map((word) =>
+            word.includes("</em>") ? (
+              <>
+                <em key={word} className="emphasis">
+                  {word.split("</em>")[0]}
+                </em>
+                {word.split("</em>")[1]}
+              </>
+            ) : (
+              word
+            )
+          )
+        : line}
+    </p>
+  );
+}
+
 export interface dataSetter {
   data: Array<Array<string>>;
   setData: React.Dispatch<React.SetStateAction<Array<Array<string>>>>;
@@ -30,8 +54,12 @@ function ControlButton({ data, setData }: dataSetter) {
   function sorter_rare() {
     const unsorted = [...data];
     const sorted = rare_btn
-      ? unsorted.sort((a: Array<any>, b: Array<any>) => b[4] - a[4])
-      : unsorted.sort((a: Array<any>, b: Array<any>) => a[4] - b[4]);
+      ? unsorted.sort((a: Array<string>, b: Array<string>) =>
+          b[4].localeCompare(a[4])
+        )
+      : unsorted.sort((a: Array<string>, b: Array<string>) =>
+          a[4].localeCompare(b[4])
+        );
 
     setData(sorted);
     set_rare_btn(!rare_btn);
@@ -39,11 +67,11 @@ function ControlButton({ data, setData }: dataSetter) {
   function sorter_weapon() {
     const unsorted = [...data];
     const sorted = weapon_btn
-      ? unsorted.sort((a: Array<any>, b: Array<any>) =>
-          a[3] == b[3] ? b[4] - a[4] : a[3].localeCompare(b[3])
+      ? unsorted.sort((a: Array<string>, b: Array<string>) =>
+          a[3] == b[3] ? b[4].localeCompare(a[4]) : a[3].localeCompare(b[3])
         )
-      : unsorted.sort((a: Array<any>, b: Array<any>) =>
-          a[3] == b[3] ? b[4] - a[4] : b[3].localeCompare(a[3])
+      : unsorted.sort((a: Array<string>, b: Array<string>) =>
+          a[3] == b[3] ? b[4].localeCompare(a[4]) : b[3].localeCompare(a[3])
         );
 
     setData(sorted);
@@ -52,11 +80,11 @@ function ControlButton({ data, setData }: dataSetter) {
   function sorter_element() {
     const unsorted = [...data];
     const sorted = element_btn
-      ? unsorted.sort((a: Array<any>, b: Array<any>) =>
-          a[2] == b[2] ? b[4] - a[4] : a[2].localeCompare(b[2])
+      ? unsorted.sort((a: Array<string>, b: Array<string>) =>
+          a[2] == b[2] ? b[4].localeCompare(a[4]) : a[2].localeCompare(b[2])
         )
-      : unsorted.sort((a: Array<any>, b: Array<any>) =>
-          a[2] == b[2] ? b[4] - a[4] : b[2].localeCompare(a[2])
+      : unsorted.sort((a: Array<string>, b: Array<string>) =>
+          a[2] == b[2] ? b[4].localeCompare(a[4]) : b[2].localeCompare(a[2])
         );
 
     setData(sorted);
@@ -242,4 +270,9 @@ function Combinations({ checked_characters }: CheckedCharacterList) {
   );
 }
 
-export { ControlButton, CharacterCard, CharacterCheckedContainer };
+export {
+  SentencesEmp,
+  ControlButton,
+  CharacterCard,
+  CharacterCheckedContainer,
+};
