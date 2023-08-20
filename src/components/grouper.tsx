@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { characters, combinations } from "../datas/combinations";
 
 function ScrollToTop() {
-  const { pathname } = useLocation(); //
+  const { pathname } = useLocation();
 
   useEffect(() => {
     window.scrollTo(0, 0);
