@@ -1,5 +1,5 @@
-## credit
-made with react.js + vite + typescript
+## made with
+react.js + vite + typescript
 
 ## preparing..
 
