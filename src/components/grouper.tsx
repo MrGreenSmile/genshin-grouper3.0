@@ -1,7 +1,16 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { characters, combinations } from "../datas/combinations";
 
+function ScrollToTop() {
+  const { pathname } = useLocation(); //
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 export interface emphasizing {
   line: string;
 }
@@ -271,6 +280,7 @@ function Combinations({ checked_characters }: CheckedCharacterList) {
 }
 
 export {
+  ScrollToTop,
   SentencesEmp,
   ControlButton,
   CharacterCard,
