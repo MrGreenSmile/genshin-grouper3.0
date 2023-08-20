@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { allWeapon, allArtifacts } from "../datas/equipments";
 import { SentencesEmp } from "../components/grouper";
 
@@ -6,6 +7,7 @@ export interface profile {
   character_names: Array<string>;
   character_name: string;
   character_profile: {
+    en_name: string;
     gender: string;
     rareness: string;
     element: string;
@@ -41,7 +43,7 @@ function CharacterProfile({
       <div className="right">
         <div className="character-profile-column">이름</div>
         <div className="character-profile-content">
-          {character_name + "(" + character_names[1] + ")"}
+          {character_name + "(" + character_profile.en_name + ")"}
         </div>
         <div className="character-profile-column">성별</div>
         <div className="character-profile-content">
@@ -858,7 +860,9 @@ function Partners({ partner }: character_partner) {
     <div>
       <div className="partner-images">
         {partner.name.map((name) => (
-          <img src={"/character_card/" + name + ".webp"} key="" />
+          <Link to={"/character-detail/" + name} key="">
+            <img src={"/character_card/" + name + ".webp"} key="" />
+          </Link>
         ))}
       </div>
       <div>

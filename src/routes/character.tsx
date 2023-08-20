@@ -46,6 +46,7 @@ export interface detail_info {
     name: string;
     summary: string;
     profile: {
+      en_name: string;
       gender: string;
       rareness: string;
       element: string;
