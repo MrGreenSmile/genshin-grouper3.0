@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { characters } from "../datas/combinations";
 
@@ -6,12 +7,14 @@ import characters_detail from "../datas/characters_detail";
 import * as Details from "./character_detail";
 
 function CharacterDetail() {
+  useEffect(() => window.scrollTo(0, 0), []);
+
   const { character_id } = useParams() as { character_id: string };
   const character_name: Array<string> = characters.filter((names) =>
-    names.includes(character_id)
+    names.includes(character_id),
   )[0];
   const character_detail = characters_detail.filter(
-    (detail) => detail.name === character_name[0]
+    (detail) => detail.name === character_name[0],
   )[0];
 
   return (

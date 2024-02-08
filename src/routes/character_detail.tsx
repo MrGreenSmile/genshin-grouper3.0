@@ -421,7 +421,7 @@ function Materials({ penetration_materials, skill_materials }: materials) {
                 <div key="">
                   <img src={"/materials/" + metarial + ".webp"} />
                 </div>
-              )
+              ),
             )}
           </div>
         </div>
@@ -440,7 +440,7 @@ function Materials({ penetration_materials, skill_materials }: materials) {
                 <div key="">
                   <img src={"/materials/" + metarial + ".webp"} />
                 </div>
-              )
+              ),
             )}
           </div>
         </div>
@@ -590,7 +590,7 @@ function Skills({ character_name, character_skill }: character_skills) {
               skill_detail={constel}
               key=""
             />
-          )
+          ),
         )}
       </div>
 
@@ -711,7 +711,7 @@ export interface character_weapons {
 function Weapons({ weapon }: character_weapons) {
   const [content_veiw, content_veiwer] = useState(false);
   const weapon_content = allWeapon.filter(
-    (weapon_list) => weapon_list.name === weapon.name
+    (weapon_list) => weapon_list.name === weapon.name,
   )[0];
 
   return (
@@ -784,7 +784,7 @@ export interface character_artifacts {
 function Artifacts({ artifacts }: character_artifacts) {
   const [content_veiw, content_veiwer] = useState(false);
   const artifact = allArtifacts.filter(
-    (art) => artifacts.name[0] === art.name || artifacts.name[1] === art.name
+    (art) => artifacts.name[0] === art.name || artifacts.name[1] === art.name,
   );
 
   return (
