@@ -63,7 +63,7 @@ function CharacterProfile({
         </div>
         <div className="character-profile-column">운명의 자리</div>
         <div className="character-profile-content">
-          {character_profile.constellation}
+          {character_profile.constellation + " 자리"}
         </div>
         <div className="character-profile-column">생일</div>
         <div className="character-profile-content">
