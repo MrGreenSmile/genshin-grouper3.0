@@ -843,7 +843,7 @@ function ArtifactContent({ artifact }: artifact_content) {
       <p>2셋 효과 : {artifact.set2}</p>
       <p>4셋 효과 : </p>
       {artifact.set4.split("\n").map((line) => (
-        <p key="">{line}</p>
+        <SentencesEmp key="" line={line} />
       ))}
     </>
   );
