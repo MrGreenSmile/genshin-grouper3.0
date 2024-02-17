@@ -16,19 +16,19 @@ export interface emphasizing {
 }
 function SentencesEmp({ line }: emphasizing) {
   return (
-    <p key="">
+    <p key="SentenceEmphasize">
       {line.includes("<em>")
         ? line.split("<em>").map((word) =>
             word.includes("</em>") ? (
               <>
-                <em key={word} className="emphasis">
+                <em key="word" className="emphasis">
                   {word.split("</em>")[0]}
                 </em>
                 {word.split("</em>")[1]}
               </>
             ) : (
               word
-            )
+            ),
           )
         : line}
     </p>
@@ -64,10 +64,10 @@ function ControlButton({ data, setData }: dataSetter) {
     const unsorted = [...data];
     const sorted = rare_btn
       ? unsorted.sort((a: Array<string>, b: Array<string>) =>
-          b[4].localeCompare(a[4])
+          b[4].localeCompare(a[4]),
         )
       : unsorted.sort((a: Array<string>, b: Array<string>) =>
-          a[4].localeCompare(b[4])
+          a[4].localeCompare(b[4]),
         );
 
     setData(sorted);
@@ -77,10 +77,10 @@ function ControlButton({ data, setData }: dataSetter) {
     const unsorted = [...data];
     const sorted = weapon_btn
       ? unsorted.sort((a: Array<string>, b: Array<string>) =>
-          a[3] == b[3] ? b[4].localeCompare(a[4]) : a[3].localeCompare(b[3])
+          a[3] == b[3] ? b[4].localeCompare(a[4]) : a[3].localeCompare(b[3]),
         )
       : unsorted.sort((a: Array<string>, b: Array<string>) =>
-          a[3] == b[3] ? b[4].localeCompare(a[4]) : b[3].localeCompare(a[3])
+          a[3] == b[3] ? b[4].localeCompare(a[4]) : b[3].localeCompare(a[3]),
         );
 
     setData(sorted);
@@ -90,10 +90,10 @@ function ControlButton({ data, setData }: dataSetter) {
     const unsorted = [...data];
     const sorted = element_btn
       ? unsorted.sort((a: Array<string>, b: Array<string>) =>
-          a[2] == b[2] ? b[4].localeCompare(a[4]) : a[2].localeCompare(b[2])
+          a[2] == b[2] ? b[4].localeCompare(a[4]) : a[2].localeCompare(b[2]),
         )
       : unsorted.sort((a: Array<string>, b: Array<string>) =>
-          a[2] == b[2] ? b[4].localeCompare(a[4]) : b[2].localeCompare(a[2])
+          a[2] == b[2] ? b[4].localeCompare(a[4]) : b[2].localeCompare(a[2]),
         );
 
     setData(sorted);
@@ -273,7 +273,7 @@ function Combinations({ checked_characters }: CheckedCharacterList) {
                 </span>
               ))}
             </div>
-          ))
+          )),
       )}
     </div>
   );

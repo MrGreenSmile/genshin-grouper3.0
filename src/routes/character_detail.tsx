@@ -33,14 +33,14 @@ function CharacterProfile({
   character_profile,
 }: profile) {
   return (
-    <div className="character-profile">
-      <div className="left">
+    <div className="character-profile" key="profile">
+      <div className="left" key="profile-left">
         <img
           className="character-card-illust"
           src={"/character_img/" + character_names[0] + "카드.webp"}
         />
       </div>
-      <div className="right">
+      <div className="right" key="profile-rightr">
         <div className="character-profile-column">이름</div>
         <div className="character-profile-content">
           {character_name + "(" + character_profile.en_name + ")"}
