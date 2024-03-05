@@ -17,20 +17,22 @@ export interface emphasizing {
 function SentencesEmp({ line }: emphasizing) {
   return (
     <p key="SentenceEmphasize">
-      {line.includes("<em>")
-        ? line.split("<em>").map((word) =>
-            word.includes("</em>") ? (
-              <>
-                <em key="word" className="emphasis">
-                  {<SentencesLink line={word.split("</em>")[0]} />}
-                </em>
-                {<SentencesLink line={word.split("</em>")[1]} />}
-              </>
-            ) : (
-              word
-            ),
-          )
-        : line}
+      {line.includes("<em>") ? (
+        line.split("<em>").map((word) =>
+          word.includes("</em>") ? (
+            <>
+              <em key="word" className="emphasis">
+                {<SentencesLink line={word.split("</em>")[0]} />}
+              </em>
+              {<SentencesLink line={word.split("</em>")[1]} />}
+            </>
+          ) : (
+            word
+          ),
+        )
+      ) : (
+        <SentencesLink line={line} />
+      )}
     </p>
   );
 }
