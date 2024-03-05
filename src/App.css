@@ -1,7 +1,6 @@
 * {
   font-family: "Nanum Gothic" !important;
 }
-
 ::selection {
   background-color: white;
   color: skyblue;
@@ -24,6 +23,14 @@ p {
 }
 h4 {
   font-size: 17px;
+}
+a {
+  font-weight: bold;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: skyblue;
 }
 
 .information-btn {

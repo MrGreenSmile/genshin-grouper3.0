@@ -22,9 +22,11 @@ function SentencesEmp({ line }: emphasizing) {
             word.includes("</em>") ? (
               <>
                 <em key="word" className="emphasis">
-                  {word.split("</em>")[0]}
+                  {<SentencesLink line={word.split("</em>")[0]} />}
+                  {/*word.split("</em>")[0]*/}
                 </em>
-                {word.split("</em>")[1]}
+                {<SentencesLink line={word.split("</em>")[1]} />}
+                {/*word.split("</em>")[1]*/}
               </>
             ) : (
               word
@@ -32,6 +34,27 @@ function SentencesEmp({ line }: emphasizing) {
           )
         : line}
     </p>
+  );
+}
+function SentencesLink({ line }: emphasizing) {
+  return (
+    <>
+      {line.includes("<a href='") ? (
+        <>
+          {line.split("<a href='")[0]}
+          <a
+            href={line.split("<a href='")[1].split("'")[0]}
+            target="_blank"
+            rel="noreferrer"
+          >
+            {line.split("<a href='")[1].split("'")[1].split("</a>")[0]}
+          </a>
+          {line.split("</a>")[1]}
+        </>
+      ) : (
+        line
+      )}
+    </>
   );
 }
 
