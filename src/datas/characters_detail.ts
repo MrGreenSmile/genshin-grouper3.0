@@ -6,6 +6,7 @@ import venti_detail from "./venti";
 import klee_detail from "./klee";
 import tartaglia_detail from "./tartaglia";
 import zhongli_detail from "./zhongli";
+import albedo_detail from "./albedo";
 
 const characters_detail = [
   diluc_detail,
@@ -16,6 +17,7 @@ const characters_detail = [
   klee_detail,
   tartaglia_detail,
   zhongli_detail,
+  albedo_detail,
 ];
 
 export default characters_detail;
