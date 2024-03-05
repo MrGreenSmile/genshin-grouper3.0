@@ -23,10 +23,8 @@ function SentencesEmp({ line }: emphasizing) {
               <>
                 <em key="word" className="emphasis">
                   {<SentencesLink line={word.split("</em>")[0]} />}
-                  {/*word.split("</em>")[0]*/}
                 </em>
                 {<SentencesLink line={word.split("</em>")[1]} />}
-                {/*word.split("</em>")[1]*/}
               </>
             ) : (
               word
