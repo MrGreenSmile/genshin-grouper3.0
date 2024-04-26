@@ -7,6 +7,7 @@ import klee_detail from "./klee";
 import tartaglia_detail from "./tartaglia";
 import zhongli_detail from "./zhongli";
 import albedo_detail from "./albedo";
+import ganyu_detail from "./ganyu";
 
 const characters_detail = [
   diluc_detail,
@@ -18,6 +19,7 @@ const characters_detail = [
   tartaglia_detail,
   zhongli_detail,
   albedo_detail,
+  ganyu_detail,
 ];
 
 export default characters_detail;
