@@ -8,7 +8,7 @@ import tartaglia_detail from "./tartaglia";
 import zhongli_detail from "./zhongli";
 import albedo_detail from "./albedo";
 import ganyu_detail from "./ganyu";
-import xiao_detail from "./xiao_details";
+import xiao_detail from "./xiao";
 
 const characters_detail = [
   diluc_detail,
