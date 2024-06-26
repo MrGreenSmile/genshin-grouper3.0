@@ -277,7 +277,7 @@ function Combinations({ checked_characters }: CheckedCharacterList) {
       <h3 key="probably-possible">해볼만한 조합</h3>
       {combinations
         .reduce(function (combi: Array<Array<string>>, groupe: Array<string>) {
-          groupe.filter((do2) => checked_characters.includes(do2)).length > 1
+          groupe.filter((memb) => checked_characters.includes(memb)).length > 1
             ? combi.push(groupe)
             : null;
 
