@@ -42,7 +42,7 @@ function CharacterList() {
         set_checked_list(checked_list.filter((ele) => ele !== value));
       }
     },
-    [checked_list]
+    [checked_list],
   );
   function checked_clear() {
     set_checked_list([]);
