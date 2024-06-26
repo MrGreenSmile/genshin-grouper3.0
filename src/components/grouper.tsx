@@ -275,7 +275,34 @@ function Combinations({ checked_characters }: CheckedCharacterList) {
         ))}
 
       <h3 key="probably-possible">해볼만한 조합</h3>
-      {checked_characters.map((checked) =>
+      {combinations
+        .reduce(function (combi: Array<Array<string>>, groupe: Array<string>) {
+          groupe.filter((do2) => checked_characters.includes(do2)).length > 1
+            ? combi.push(groupe)
+            : null;
+
+          return combi;
+        }, [])
+        .map((combi) => (
+          <div key={combi.join("/")}>
+            {combi.map((ea: string) => (
+              <span className="combination-images" key="combinations">
+                <img
+                  src={"character_card/" + ea + ".webp"}
+                  alt={ea}
+                  key="combinations-member"
+                />
+                <span
+                  className="combination-character"
+                  key="combinations-member-name"
+                >
+                  {characters.filter((char) => char[1] === ea)[0]}
+                </span>
+              </span>
+            ))}
+          </div>
+        ))}
+      {/*checked_characters.map((checked) =>
         combinations
           .filter((combi) => combi.includes(checked))
           .map((combi) => (
@@ -297,7 +324,7 @@ function Combinations({ checked_characters }: CheckedCharacterList) {
               ))}
             </div>
           )),
-      )}
+      )*/}
     </div>
   );
 }
