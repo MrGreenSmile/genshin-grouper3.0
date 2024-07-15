@@ -9,6 +9,7 @@ import zhongli_detail from "./zhongli";
 import albedo_detail from "./albedo";
 import ganyu_detail from "./ganyu";
 import xiao_detail from "./xiao";
+import keqing_detail from "./keqing";
 
 const characters_detail = [
   diluc_detail,
@@ -22,6 +23,7 @@ const characters_detail = [
   albedo_detail,
   ganyu_detail,
   xiao_detail,
+  keqing_detail,
 ];
 
 export default characters_detail;
