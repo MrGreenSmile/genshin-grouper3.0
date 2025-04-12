@@ -1,4 +1,4 @@
-import * as materials from "./materials";
+import * as materials from "../equipments/materials";
 
 const diluc_detail = {
   name: "다이루크",

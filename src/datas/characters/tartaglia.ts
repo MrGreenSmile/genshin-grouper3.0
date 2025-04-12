@@ -1,4 +1,4 @@
-import * as materials from "./materials";
+import * as materials from "../equipments/materials";
 
 const tartaglia_detail = {
   name: "타르탈리아",

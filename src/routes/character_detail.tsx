@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { allWeapon, allArtifacts } from "../datas/equipments";
+import { allWeapon, allArtifacts } from "../datas/equipments/equipments";
 import { SentencesEmp } from "../components/grouper";
 
 export interface profile {
