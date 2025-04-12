@@ -11,6 +11,7 @@ import ganyu_detail from "./characters/ganyu";
 import xiao_detail from "./characters/xiao";
 import keqing_detail from "./characters/keqing";
 import hutao_detail from "./characters/hutao";
+import eula_detail from "./characters/eula";
 
 const characters_detail = [
   diluc_detail,
@@ -26,6 +27,7 @@ const characters_detail = [
   xiao_detail,
   keqing_detail,
   hutao_detail,
+  eula_detail,
 ];
 
 export default characters_detail;

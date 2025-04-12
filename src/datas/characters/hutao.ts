@@ -38,7 +38,7 @@ const hutao_detail = {
     materials: {
       penetration: [materials.manos, "설익은 옥", "예상꽃", materials.guragura],
       skills: [
-        materials.prosperities,
+        materials.industries,
         "무예의 혼",
         materials.guragura,
         "지식의 왕관",
@@ -51,7 +51,7 @@ const hutao_detail = {
       content: `
         일반 공격 : 창으로 최대 6번 공격한다.
         강공격 : 일정 스태미나를 소모해 올려치기 공격을 가한다.
-        공중에서 땅을 내려찍어 경로상의 적을 공격하고 착지 시 범위 피해를 준다. <em>소</em>는 낙하 공격 시, 추락 피해를 입지 않는다.`,
+        낙하 공격 : 공중에서 땅을 내려찍어 경로상의 적을 공격하고 착지 시 범위 피해를 준다.`,
     },
     normal_skill: {
       name: "나비의 서",
@@ -257,6 +257,12 @@ const hutao_detail = {
         name: ["Bennett"],
         content: `
         다른 불 딜러와 달리 <em>호두</em>는 공격력 계수를 사용하지 않고 힐이 필요없어 <em>베넷</em>과의 궁합이 좋지 않다.
+        `,
+      },
+      {
+        name: ["Albedo", "Chiori", "Kachina"],
+        content: `
+        <em>알베도</em>는 <em>종려</em>를 쓸 때 바위 공명을 위해 함께 쓰인다. <em>야란</em>이 나오면서 쓰이진 않고, <em>치오리</em>나 <em>잿더미</em>를 착용한 <em>카치나</em>도 고려할 수 있다.
         `,
       },
     ],
