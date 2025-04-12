@@ -1,4 +1,4 @@
-import * as materials from "./materials";
+import * as materials from "../equipments/materials";
 
 const albedo_detail = {
   name: "알베도",

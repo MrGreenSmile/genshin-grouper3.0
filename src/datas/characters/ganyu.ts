@@ -1,4 +1,4 @@
-import * as materials from "./materials";
+import * as materials from "../equipments/materials";
 
 const ganyu_detail = {
   name: "감우",

@@ -1,4 +1,4 @@
-import * as materials from "./materials";
+import * as materials from "../equipments/materials";
 
 const mona_detail = {
   name: "모나",
