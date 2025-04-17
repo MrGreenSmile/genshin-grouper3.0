@@ -11,10 +11,10 @@ function CharacterDetail() {
 
   const { character_id } = useParams() as { character_id: string };
   const character_name: Array<string> = characters.filter((names) =>
-    names.includes(character_id),
+    names.includes(character_id)
   )[0];
   const character_detail = characters_detail.filter(
-    (detail) => detail.name === character_name[0],
+    (detail) => detail.name === character_name[0]
   )[0];
 
   return (
@@ -144,11 +144,13 @@ function BasicInformation({ character_name, character_detail }: detail_info) {
   return (
     <>
       <h2>기본 정보</h2>
+      {/*--
       <div className="character-summary">
         {character_detail.summary.split("\n").map((summ) => (
           <SentencesEmp key="" line={summ} />
         ))}
       </div>
+      --*/}
 
       <h3>프로필</h3>
       <Details.CharacterProfile
