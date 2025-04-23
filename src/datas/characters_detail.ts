@@ -12,6 +12,7 @@ import xiao_detail from "./characters/xiao";
 import keqing_detail from "./characters/keqing";
 import hutao_detail from "./characters/hutao";
 import eula_detail from "./characters/eula";
+import kaedahara_kazuha_detail from "./characters/kaedehara_kazuha";
 
 const characters_detail = [
   diluc_detail,
@@ -28,6 +29,7 @@ const characters_detail = [
   keqing_detail,
   hutao_detail,
   eula_detail,
+  kaedahara_kazuha_detail,
 ];
 
 export default characters_detail;
