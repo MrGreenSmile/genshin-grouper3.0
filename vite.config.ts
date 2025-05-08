@@ -8,7 +8,7 @@ export default defineConfig({
     allowedHosts: [
       "syg3xy-5173.csb.app",
       "964qhg-5173.csb.app",
-      "lkhzcg-4173.csb.app",
+      "lkhzcg-5173.csb.app",
     ],
   },
 });

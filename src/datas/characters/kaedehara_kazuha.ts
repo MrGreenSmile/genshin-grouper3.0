@@ -5,31 +5,31 @@ const kaedahara_kazuha_detail = {
   summary: ``,
   profile: {
     en_name: "Kaedehara Kazuha",
-    gender: "여성",
+    gender: "남성",
     rareness: "★★★★★",
-    element: "얼음",
-    weapon: "양손검",
-    constellation: "물보라",
-    birthday: "10/25",
-    union: "몬드 - 페보니우스 기사단",
-    actor: ["김현지", "佐藤 利奈(사토 리나)", "Suzie Yeung", "子音"],
+    element: "바람",
+    weapon: "한손검",
+    constellation: "붉은 단풍",
+    birthday: "10/29",
+    union: "리월 - 남십자 함대",
+    actor: ["김신우", "島﨑 信長(시마자키 노부나가)", "Mark Whitten", "斑马"],
     cook: {
-      name: "격랑 파이",
-      content: `'달빛 파이' 제작 시 획득 가능.
+      name: "우기청호",
+      content: `'은어 조림' 제작 시 획득 가능.
       파티 내 모든 캐릭터의 보호막 강화 효과가 40% 증가하고, 방어력이 282pt 증가한다. 지속시간: 300초, 다인모드 시 자신의 캐릭터에만 적용된다.
-      유라의 특제 요리. 초승달 모양이 전통에 반항하는 것인지, 아니면 「눈에는 눈, 이에는 이」 라는 그녀의 업무 방식을 표현한 것인지는 알 수 없다. 황금색 껍질에 짭짤한 훈제 향이 가득해 몬드를 통틀어도 이런 금손을 찾기 힘들지만... 이렇게 말했다간 또 한 번 그녀의 「원한」을 사게 될 것이다.`,
+      카에데하라 카즈하의 특제 요리. 항행하는 배에서 꼬박 하룻밤을 말린 생선으로 제작했다고 한다. 카즈하는 평범한 어포라고 말했지만 이맛은... 삼라만상을 포용한 소탈함일까?`,
     },
     materials: {
       penetration: [
-        materials.frozens,
-        "응결의 꽃",
-        "민들레 씨앗",
-        materials.chuchu_mask,
+        materials.turquoises,
+        "꼭두각시 부품",
+        "바다 불로초",
+        materials.crows_medal,
       ],
       skills: [
-        materials.conflicts,
-        "용왕의 면류관",
-        materials.chuchu_mask,
+        materials.industries,
+        "순금의 비늘",
+        materials.crows_medal,
         "지식의 왕관",
       ],
     },
